@@ -1,0 +1,9 @@
+{
+  "tumor_size_max_dimension": "4.2 cm",
+  "pT": "T2a",
+  "pN": "N2",
+  "tumor_stage": "Stage IB",
+  "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
+
+  "comment": "The pathology report describes a case of lung squamous cell carcinoma with distant metastasis. The tumor is located in the lingula and measures 4.2 cm in greatest dimension. The tumor is invasive and involves the venous and bronchial margins. The regional lymph nodes are involved with metastasis. The overall stage of the tumor is stage IB."
+}

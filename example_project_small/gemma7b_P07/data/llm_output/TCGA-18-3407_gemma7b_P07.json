@@ -1,0 +1,6 @@
+{"tumor_size_max_dimension": {"stated": "4.0 cm", "estimated": "4.0 cm", "CD": 1.0, "evidence": "The tumor size is stated as 4.0 cm in the pathology report."},
+"pT": {"stated": "T2a", "estimated": "T2a", "CD": 0.8, "evidence": "The tumor invades through the visceral pleura but does not penetrate beyond the capsule of the gland."},
+"pN": {"stated": "N0", "estimated": "N0", "CD": 0.9, "evidence": "No lymph nodes are involved."},
+"tumor_stage": {"stated": "Stage IB", "estimated": "Stage IB", "CD": 0.8, "evidence": "The tumor stage is Stage IB based on AJCC 7th edition criteria."},
+"histologic_diagnosis": {"stated": "Lung Adenocarcinoma", "estimated": "Lung Adenocarcinoma", "CD": 1.0, "evidence": "The pathology report states a diagnosis of Lung Adenocarcinoma."},
+"comment": "The pathology report describes a T2NO squamous cell carcinoma of the lung. The tumor is confined to the lung and does not involve the lymph nodes. There is no evidence of distant metastasis. The overall pathological stage is Stage IB."}

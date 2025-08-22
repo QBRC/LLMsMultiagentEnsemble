@@ -1,0 +1,28 @@
+{
+  "tumor_size_max_dimension_stated": 5.0,
+  "tumor_size_max_dimension": 5.0,
+  "tumor_size_max_dimension_CD": 1.00,
+  "tumor_size_max_dimension_evidence": "Tumor size stated as 5.0 cm in greatest dimension in the pathology report.",
+  
+  "pT_stated": "Poorly differentiated adenocarcinoma",
+  "pT": "T2",
+  "pT_CD": 0.85,
+  "pT_evidence": "The tumor is described as poorly differentiated adenocarcinoma with a size of 5.0 cm, which corresponds to T2 category based on AJCC 7th edition criteria.",
+  
+  "pN_stated": "No tumor seen in lymph nodes",
+  "pN": "N0",
+  "pN_CD": 1.00,
+  "pN_evidence": "All examined lymph nodes (0/1 in multiple stations) are free of tumor, indicating N0 status.",
+  
+  "tumor_stage_stated": "Stage II",
+  "tumor_stage": "Stage IIB",
+  "tumor_stage_CD": 0.90,
+  "tumor_stage_evidence": "Based on pT (T2) and pN (N0), the estimated tumor stage is Stage IIB according to AJCC 7th edition criteria.",
+  
+  "histologic_diagnosis_stated": "Poorly differentiated adenocarcinoma",
+  "histologic_diagnosis": "Lung Adenocarcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "The report clearly states the diagnosis as poorly differentiated adenocarcinoma, which is classified as Lung Adenocarcinoma.",
+  
+  "comment": "The pathology report indicates a poorly differentiated adenocarcinoma located in the right upper lobe with a maximum tumor size of 5.0 cm. All examined lymph nodes are free of tumor, supporting a diagnosis of N0. The tumor is classified as T2, leading to an overall stage of IIB according to AJCC 7th edition criteria. The surgical margins are free of tumor, indicating a favorable outcome in terms of local control."
+}

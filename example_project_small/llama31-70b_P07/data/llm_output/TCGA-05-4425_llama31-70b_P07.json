@@ -1,0 +1,28 @@
+{
+    "tumor_size_max_dimension_stated": "Unknown",
+    "tumor_size_max_dimension": "Unknown",
+    "tumor_size_max_dimension_CD": "0.00",
+    "tumor_size_max_dimension_evidence": "No information provided in the pathology report.",
+
+    "pT_stated": "pT2",
+    "pT": "T2",
+    "pT_CD": "1.00",
+    "pT_evidence": "The tumor classification as pT2 is stated in the TNM classification section of the pathology report.",
+
+    "pN_stated": "pN0",
+    "pN": "N0",
+    "pN_CD": "1.00",
+    "pN_evidence": "The lymph node status as pN0 is stated in the TNM classification section of the pathology report.",
+
+    "tumor_stage_stated": "Stage IV",
+    "tumor_stage": "Stage IV",
+    "tumor_stage_CD": "1.00",
+    "tumor_stage_evidence": "The tumor stage as Stage IV is stated in the TNM classification section of the pathology report, based on pT2 and pN0 with distant metastasis (pM1).",
+
+    "histologic_diagnosis_stated": "Mixed adenocarcinoma of the lung",
+    "histologic_diagnosis": "Lung Adenocarcinoma",
+    "histologic_diagnosis_CD": "0.80",
+    "histologic_diagnosis_evidence": "The tumor is classified as a mixed adenocarcinoma with a predominantly tubulopapillary structural pattern, but requires confirmation by immunohistochemical analysis.",
+
+    "comment": "The pathology report describes a peripheral bronchopulmonary carcinoma of the lung with pleural invasion and a second small focus or satellite nodule. The tumor classification as adenocarcinoma of the lung is supported by immunohistochemical analysis, but requires confirmation. The presence of vascular invasion and endobronchial occlusion in a subsegmental branch of the bronchus suggests an aggressive tumor behavior."
+}

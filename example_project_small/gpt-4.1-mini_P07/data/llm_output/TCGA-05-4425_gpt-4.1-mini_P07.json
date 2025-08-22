@@ -1,0 +1,28 @@
+{
+  "tumor_size_max_dimension_stated": "Unknown",
+  "tumor_size_max_dimension": "Unknown",
+  "tumor_size_max_dimension_CD": 0.00,
+  "tumor_size_max_dimension_evidence": "No explicit tumor size dimension mentioned in the pathology report.",
+  
+  "pT_stated": "pT2",
+  "pT": "T2",
+  "pT_CD": 1.00,
+  "pT_evidence": "The report states 'TNM classification on the basis of this material pT2'. Also, pleural invasion is noted, consistent with T2 category in AJCC7.",
+  
+  "pN_stated": "pN0",
+  "pN": "N0",
+  "pN_CD": 1.00,
+  "pN_evidence": "The report states 'pN0' explicitly with no evidence of regional lymph node metastasis.",
+  
+  "tumor_stage_stated": "Stage IV",
+  "tumor_stage": "Stage IV",
+  "tumor_stage_CD": 1.00,
+  "tumor_stage_evidence": "The report states 'stage IV' based on pM1 (PUL) indicating distant metastasis (pulmonary metastasis). According to AJCC7, any M1 classifies as Stage IV.",
+  
+  "histologic_diagnosis_stated": "Peripheral bronchopulmonary, histologically mixed adenocarcinoma",
+  "histologic_diagnosis": "Lung Adenocarcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "The diagnosis states adenocarcinoma of the lung with immunohistochemical confirmation (CK7+, TTF1+).",
+  
+  "comment": "The pathology report describes a peripheral bronchopulmonary mixed adenocarcinoma with pleural invasion and a satellite nodule considered a metastasis. The tumor is classified as pT2, pN0, and pM1 (pulmonary metastasis), resulting in Stage IV disease per AJCC7 criteria. Immunohistochemistry supports the diagnosis of lung adenocarcinoma. Tumor size is not provided, limiting size-based staging refinement. The R1 resection status indicates tumor cells at the pleural surface, suggesting incomplete resection. Overall, the report provides sufficient data for staging except for tumor size measurement."
+}

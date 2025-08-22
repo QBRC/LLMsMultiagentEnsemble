@@ -1,0 +1,22 @@
+{
+"tumor_size_max_dimension_stated": ["<the extracted value of tumor size (maximum dimension in cm), as stated in the pathology report>", "Unknown"],
+"tumor_size_max_dimension": ["<the estimated value of tumor size (maximum dimension in cm), based on AJCC 7th edition for lung carcinoma staging manual>", "Unknown"],
+"tumor_size_max_dimension_CD": "<the certainty degree of your estimation: [0.00, 1.00]>",
+"tumor_size_max_dimension_evidence": "<the supporting evidence for your estimation>",
+"pT_stated": ["<the extracted value of pT, as stated in the pathology report>", "Unknown"],
+"pT": ["<the estimated value of pT (select one of values listed in the allowed standard values for pT), based on AJCC 7th edition for lung carcinoma staging manual>", "Unknown"],
+"pT_CD": "<the certainty degree of your estimation: [0.00, 1.00]>",
+"pT_evidence": "<the supporting evidence for your estimation>",
+"pN_stated": ["<the extracted value of pN, as stated in the pathology report>", "Unknown"],
+"pN": ["<the estimated value of pN (select one of values listed in the allowed standard values for pT), based on AJCC 7th edition for lung carcinoma staging manual>", "Unknown"],
+"pN_CD": "<the certainty degree of your estimation: [0.00, 1.00]>",
+"pN_evidence": "<the supporting evidence for your estimation>",
+"tumor_stage_stated": ["<the extracted value of tumor stage, as stated in the pathology report>", "Unknown"],
+"tumor_stage": ["<the estimated value of tumor stage (select one of values listed in the allowed standard values for pT), based on AJCC 7th edition for lung carcinoma staging manual>", "Unknown"],
+"tumor_stage_CD": "<the certainty degree of your estimation: [0.00, 1.00]>",
+"tumor_stage_evidence": "<the supporting evidence for your estimation>",
+"histologic_diagnosis_stated": ["<the extracted value of histologic diagnosis, as stated in the pathology report>", "Unknown"],
+"histologic_diagnosis": ["<the estimated value of histologic diagnosis (select one of values listed in the allowed standard values for pT), based on AJCC 7th edition for lung carcinoma staging manual>", "Unknown"],
+"histologic_diagnosis_CD": "<the certainty degree of your estimation: [0.00, 1.00]>",
+"histologic_diagnosis_evidence": "<the supporting evidence for your estimation>"
+}

@@ -1,0 +1,28 @@
+{
+  "tumor_size_max_dimension_stated": "3.5 em",
+  "tumor_size_max_dimension": 3.5,
+  "tumor_size_max_dimension_CD": 1.00,
+  "tumor_size_max_dimension_evidence": "The report states a 3.5 cm firm mass in the left lower lobe of the lung.",
+  
+  "pT_stated": "Invasive, poorly differentiated, squamous cell carcinoma (3.5 em)",
+  "pT": "T2",
+  "pT_CD": 0.90,
+  "pT_evidence": "The tumor size is 3.5 cm, which corresponds to T2 category (tumor size > 3 cm but ≤ 5 cm).",
+
+  "pN_stated": "One lymph node negative for metastatic carcinoma (0/1)",
+  "pN": "N0",
+  "pN_CD": 1.00,
+  "pN_evidence": "The lymph node was negative for metastatic carcinoma, indicating no regional lymph node involvement (N0).",
+
+  "tumor_stage_stated": "Unknown",
+  "tumor_stage": "Stage IIB",
+  "tumor_stage_CD": 0.85,
+  "tumor_stage_evidence": "Based on pT (T2) and pN (N0), the tumor stage is Stage IIB according to AJCC 7th edition criteria.",
+
+  "histologic_diagnosis_stated": "Invasive, poorly differentiated, squamous cell carcinoma",
+  "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "The final diagnosis clearly states 'Invasive, poorly differentiated, squamous cell carcinoma'.",
+
+  "comment": "The pathology report indicates a diagnosis of invasive poorly differentiated squamous cell carcinoma in the left lower lobe of the lung, with a tumor size of 3.5 cm. The lymph node evaluation shows no evidence of metastatic disease. The tumor is classified as Stage IIB based on the AJCC 7th edition criteria."
+}

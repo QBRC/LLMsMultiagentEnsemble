@@ -1,0 +1,23 @@
+{
+  "tumor_size_max_dimension_stated": "Unknown",
+  "tumor_size_max_dimension": "Unknown",
+  "tumor_size_max_dimension_CD": 0.0,
+  "tumor_size_max_dimension_evidence": "The pathology report does not provide a specific measurement for the greatest dimension of the tumor.",
+  "pT_stated": "pT4",
+  "pT": "T4",
+  "pT_CD": 1.0,
+  "pT_evidence": "The report states 'tumor classification on the basis of this material pT4', indicating extensive local invasion including pleural invasion.",
+  "pN_stated": "pN1",
+  "pN": "N1",
+  "pN_CD": 1.0,
+  "pN_evidence": "The report states 'tumor classification on the basis of this material pN1', indicating metastasis to peribronchial and ipsilateral hilar lymph nodes.",
+  "tumor_stage_stated": "Stage IV",
+  "tumor_stage": "Stage IV",
+  "tumor_stage_CD": 1.0,
+  "tumor_stage_evidence": "The report states 'stage IV', which is consistent with the pT4 and pN1 classifications, indicating distant metastasis.",
+  "histologic_diagnosis_stated": "mixed adenocarcinoma of the right lower lobe of the lung",
+  "histologic_diagnosis": "Lung Adenocarcinoma",
+  "histologic_diagnosis_CD": 0.95,
+  "histologic_diagnosis_evidence": "The report describes a 'mixed adenocarcinoma' with glandular tubulopapillary and bronchioloalveolar differentiation, confirmed by immunohistochemical analysis.",
+  "comment": "This pathology report details an extensive and locoregionally advanced lung carcinoma with pleural invasion and metastasis to lymph nodes. The tumor is classified as pT4, pN1, stage IV, indicating significant local spread and distant metastasis. The histologic diagnosis confirms a mixed adenocarcinoma of the lung."
+}

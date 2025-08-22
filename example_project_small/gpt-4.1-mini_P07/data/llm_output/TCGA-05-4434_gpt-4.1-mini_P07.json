@@ -1,0 +1,28 @@
+{
+  "tumor_size_max_dimension_stated": "Unknown",
+  "tumor_size_max_dimension": "Unknown",
+  "tumor_size_max_dimension_CD": 0.00,
+  "tumor_size_max_dimension_evidence": "No explicit tumor size or greatest dimension in centimeters mentioned in the report.",
+  
+  "pT_stated": "pT4",
+  "pT": "T4",
+  "pT_CD": 1.00,
+  "pT_evidence": "The report states 'Tumor classification on the basis of this material pT4' and describes pleural invasion and extensive locoregional spread consistent with T4.",
+  
+  "pN_stated": "pN1",
+  "pN": "N1",
+  "pN_CD": 1.00,
+  "pN_evidence": "The report states 'pN1' and mentions lymph node metastases in parabronchial region, hilus, and sample 5.",
+  
+  "tumor_stage_stated": "stage IV",
+  "tumor_stage": "Stage IV",
+  "tumor_stage_CD": 1.00,
+  "tumor_stage_evidence": "The report states 'stage IV' and indicates pM1 (P/E) with pleural dissemination and carcinoma cells in pleural effusions, consistent with distant metastasis and stage IV by AJCC7.",
+  
+  "histologic_diagnosis_stated": "histologically mixed adenocarcinoma",
+  "histologic_diagnosis": "Lung Adenocarcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "The diagnosis states 'histologically mixed adenocarcinoma' with immunohistochemical confirmation of adenocarcinoma of the lung.",
+  
+  "comment": "The pathology report describes an extensive, locoregionally advanced lung tumor in the right lower lobe with pleural invasion and metastatic dissemination to pleura and lymph nodes. The tumor is classified as pT4 due to pleural invasion and extensive spread, pN1 due to lymph node metastases, and pM1 due to pleural effusion involvement, resulting in stage IV disease per AJCC7 criteria. Histology and immunohistochemistry confirm a mixed adenocarcinoma of lung origin. Tumor size is not specified. The RX status indicates possible residual tumor cells in pleural effusions. Immunohistochemical analysis supports the diagnosis and excludes squamous differentiation and metastatic breast carcinoma. Overall, the report provides comprehensive staging and diagnosis but lacks explicit tumor size measurement."
+}

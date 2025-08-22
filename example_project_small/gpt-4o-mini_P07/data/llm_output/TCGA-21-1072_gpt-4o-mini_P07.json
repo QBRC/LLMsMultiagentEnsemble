@@ -1,0 +1,28 @@
+{
+  "tumor_size_max_dimension_stated": "2.5 cm",
+  "tumor_size_max_dimension": 2.5,
+  "tumor_size_max_dimension_CD": 1.00,
+  "tumor_size_max_dimension_evidence": "The final diagnosis states 'KERATINIZING SQUAMOUS CELL CARCINOMA GRADE II (2.5 CM)' indicating the maximum dimension of the tumor.",
+  
+  "pT_stated": "PT2NO",
+  "pT": "T2",
+  "pT_CD": 1.00,
+  "pT_evidence": "The final diagnosis indicates 'PT2NO', which corresponds to a pT category of T2 based on AJCC 7th edition criteria.",
+  
+  "pN_stated": "NO TUMOR SEEN (0/9)",
+  "pN": "N0",
+  "pN_CD": 1.00,
+  "pN_evidence": "The final diagnosis states 'NEGATIVE PERIBRONCHIAL LYMPH NODES (0/9)', indicating no lymph node involvement, thus pN is N0.",
+  
+  "tumor_stage_stated": "Unknown",
+  "tumor_stage": "Stage IIB",
+  "tumor_stage_CD": 1.00,
+  "tumor_stage_evidence": "Based on pT (T2) and pN (N0), the tumor stage is classified as Stage IIB according to AJCC 7th edition criteria.",
+  
+  "histologic_diagnosis_stated": "KERATINIZING SQUAMOUS CELL CARCINOMA GRADE II",
+  "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "The final diagnosis explicitly states 'KERATINIZING SQUAMOUS CELL CARCINOMA GRADE II', confirming the histologic diagnosis.",
+  
+  "comment": "The pathology report indicates a diagnosis of keratinizing squamous cell carcinoma grade II with a maximum tumor size of 2.5 cm. There is no lymph node involvement, and the tumor is classified as Stage IIB according to AJCC 7th edition criteria. The bronchial and vascular margins are negative for tumor, indicating a potentially favorable prognosis."
+}

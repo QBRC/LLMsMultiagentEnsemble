@@ -1,0 +1,28 @@
+{
+    "tumor_size_max_dimension_stated": "Unknown",
+    "tumor_size_max_dimension": "Unknown",
+    "tumor_size_max_dimension_CD": 0.00,
+    "tumor_size_max_dimension_evidence": "No information provided in the pathology report.",
+
+    "pT_stated": "pT2",
+    "pT": "T2",
+    "pT_CD": 1.00,
+    "pT_evidence": "The tumor classification according to these findings pT2.",
+
+    "pN_stated": "pN1",
+    "pN": "N1",
+    "pN_CD": 1.00,
+    "pN_evidence": "The lymph node with tumor is located in the hilus region immediately next to one of the tumor-infiltrated large pulmonary vessels.",
+
+    "tumor_stage_stated": "Stage IIB",
+    "tumor_stage": "Stage IIB",
+    "tumor_stage_CD": 1.00,
+    "tumor_stage_evidence": "The tumor classification according to these findings pT2 pN1 V2 RX, stage IIB.",
+
+    "histologic_diagnosis_stated": "Extensive, central to peripheral bronchopulmonary adenocarcinoma of histologically mixed differentiation",
+    "histologic_diagnosis": "Lung Adenocarcinoma",
+    "histologic_diagnosis_CD": 0.80,
+    "histologic_diagnosis_evidence": "The glandular maturation component is partly reminiscent of the fetal type of bronchopulmonary adenocarcinoma.",
+
+    "comment": "This pathology report describes a case of lung adenocarcinoma with mixed differentiation, classified as pT2 pN1 V2 RX, stage IIB. The tumor shows invasion of large pulmonary vessels and pleura, with a unique feature of lumen-obstructing thrombi of polypoid growth extending beyond the resection margin."
+}

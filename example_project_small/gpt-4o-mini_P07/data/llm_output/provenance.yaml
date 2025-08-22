@@ -1,0 +1,15 @@
+- dataset_id: lung
+  estimated_cost: $0.00282618
+  failed_json_loading: []
+  failed_request: []
+  framework: AzureOpenAI
+  input_data_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/example_project_small/data/tcga_pan_lung_samples.csv
+  model: gpt-4o-mini
+  number_of_failed_json_loading: 0
+  temperature: 0.0
+  time_ended: '2025-08-22 03:37:05.517290'
+  time_started: '2025-08-22 03:36:18.116353'
+  time_used: 0.790016 minutes
+  total_input_tokens: 16708
+  total_output_tokens: 5333
+  total_tokens: 22041

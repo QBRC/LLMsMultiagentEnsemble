@@ -1,0 +1,28 @@
+{
+  "tumor_size_max_dimension_stated": 4.7,
+  "tumor_size_max_dimension": 4.7,
+  "tumor_size_max_dimension_CD": 1.00,
+  "tumor_size_max_dimension_evidence": "Tumor greatest diameter 4.7 cm stated in the pathology report.",
+  
+  "pT_stated": "pT2",
+  "pT": "T2",
+  "pT_CD": 1.00,
+  "pT_evidence": "The report states the tumor is staged as pT2N0 cancer.",
+  
+  "pN_stated": "pN0",
+  "pN": "N0",
+  "pN_CD": 1.00,
+  "pN_evidence": "The report indicates that 2 lobar peribronchial lymph nodes are negative for tumor.",
+  
+  "tumor_stage_stated": "Stage II",
+  "tumor_stage": "Stage IIB",
+  "tumor_stage_CD": 1.00,
+  "tumor_stage_evidence": "Based on pT2 and pN0, the tumor stage is classified as Stage IIB according to AJCC 7th edition criteria.",
+  
+  "histologic_diagnosis_stated": "Squamous cell carcinoma, moderately differentiated",
+  "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "The report specifies the diagnosis as squamous cell carcinoma, moderately differentiated.",
+  
+  "comment": "The pathology report indicates a diagnosis of moderately differentiated squamous cell carcinoma of the left lung with a maximum tumor size of 4.7 cm. The tumor is staged as pT2N0, leading to a final stage classification of Stage IIB. The lymph nodes examined were negative for malignancy, indicating no regional spread. The bronchial resection margin was positive for tumor involvement, which is critical for treatment considerations."
+}
