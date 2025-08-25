@@ -1,0 +1,5 @@
+{
+"AF_Diagnosis": "Probable AF",
+"AF_pr": "0.85",
+"Explanation": "The ECG report states 'probable atrial flutter with conducted beats and ventricular premature beats'. The presence of conducted beats and ST-T wave abnormalities is suggestive of atrial flutter. However, the report does not explicitly state the presence of atrial fibrillation. Therefore, the diagnosis is classified as 'Probable AF'."
+}

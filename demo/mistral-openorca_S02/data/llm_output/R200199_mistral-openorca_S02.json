@@ -1,0 +1,5 @@
+{
+"AF_Diagnosis": "Probable AFL",
+"AF_pr": "0.95",
+"Explanation": "The ECG report states 'Probable atrial flutter with conducted beats and ventricular premature beats'. The presence of right bundle-branch block, low limb lead voltage, and ST-T wave abnormalities further support the diagnosis of probable atrial flutter. The ventricular premature beats are new since the ___ and the ST-T wave abnormalities are more prominent."
+}

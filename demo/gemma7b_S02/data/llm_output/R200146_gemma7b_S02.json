@@ -1,0 +1,5 @@
+{
+"AF_Diagnosis": "Probable AF",
+"AF_pr": "0.90",
+"Explanation": "The ECG report states 'I48.91 - Unspecified atrial fibrillation' and 'Please see final interpretation under scanned ECG'. The final interpretation states 'probable atrial fibrillation'. The estimated probability of AF (AF_pr) is 0.90."
+}

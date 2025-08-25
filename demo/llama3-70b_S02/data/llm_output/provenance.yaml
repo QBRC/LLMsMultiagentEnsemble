@@ -1,0 +1,15 @@
+- dataset_id: ECG
+  estimated_cost: $0
+  failed_json_loading: []
+  failed_request: []
+  framework: Ollama
+  input_data_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/demo/data/ECG_data.csv
+  model: llama3:70b
+  number_of_failed_json_loading: 0
+  temperature: 0.0
+  time_ended: '2025-08-24 23:20:17.897136'
+  time_started: '2025-08-24 23:20:01.065188'
+  time_used: 0.280532 minutes
+  total_input_tokens: 1179
+  total_output_tokens: 60
+  total_tokens: 1239

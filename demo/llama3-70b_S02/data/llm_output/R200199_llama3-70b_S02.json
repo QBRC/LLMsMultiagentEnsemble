@@ -1,0 +1,5 @@
+{
+"AF_Diagnosis": "Probable AF",
+"AF_pr": 0.90,
+"Explanation": "The report states 'probable atrial flutter' which indicates a high confidence in the diagnosis of atrial fibrillation or atrial flutter, but not complete certainty."
+}

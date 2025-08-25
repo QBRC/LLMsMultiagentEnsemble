@@ -1,0 +1,5 @@
+{
+"AF_Diagnosis": "Possible AF",
+"AF_pr": 0.50,
+"Explanation": "The report mentions 'Unspecified atrial fibrillation' as the clinical indication, which suggests that AFib or AFL is a possible diagnosis, but it does not provide a clear confirmation of its presence."
+}

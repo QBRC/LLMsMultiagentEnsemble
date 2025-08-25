@@ -1,0 +1,5 @@
+{
+"AF_Diagnosis": "Probable AF",
+"AF_pr": "0.95",
+"Explanation": "The report states 'Probable atrial flutter', which indicates a high confidence in diagnosing an atrial flutter, placing it under the category of Probable AF with an estimated probability close to 1.0."
+}

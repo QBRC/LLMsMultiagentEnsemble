@@ -1,0 +1,19 @@
+app_config_file_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/demo/gemma7b_S02/config_llm_app.yaml
+dataset_id: ECG
+framework: Ollama
+home_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/demo/gemma7b_S02
+input_data_id_column_name: note_id
+input_data_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/demo/data/ECG_data.csv
+input_text_column_name: text
+json_key_list:
+- AF_Diagnosis
+- AF_pr
+- Explanation
+json_output_template_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/demo/json_output_template.json
+model: gemma:7b
+model_id: gemma7b
+predictor: gemma7b_S02
+prompt_file_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/demo/prompt_S02.txt
+prompt_id: S02
+system_message_file_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/demo/sys_msg_K01.txt
+var_val_list_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/demo/variable-value_list.json

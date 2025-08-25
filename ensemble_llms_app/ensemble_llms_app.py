@@ -18,11 +18,17 @@ from sklearn.metrics import *
 
 import torch
 import fire
+from abc import ABC, abstractmethod 
 
 from llm_agent import LLMAgent
 from llm_app import LLMApp
 from fix_json import *
 
+# define Abstract Base Class as interface for user defined postprocessing functions
+class Postprocessing(ABC):
+    @abstractmethod
+    def excute(self,df:pd.DataFrame) -> pd.DataFrame:
+        pass
 
 class EnsembleLLMsApp:
     def __init__(self, 
@@ -122,7 +128,6 @@ class EnsembleLLMsApp:
 
                 # add common key-value pairs to each llm_app
                 app.update(dic)
-                # print(app)
                 
                 # create folder for each llm_app
                 os.makedirs(app['home_path'], exist_ok=True)
@@ -163,8 +168,7 @@ class EnsembleLLMsApp:
         print(f"Elapsed time: {elapsed_time/60:2f} minutes ({elapsed_time:2f} seconds).\n")
 
     
-    def aggregate(self,
-                 prediction_data_list:list=[]):
+    def aggregate(self):
         """Aggregate the output csv files from every llm_app."""
 
         # Read in input data as base data.
@@ -193,11 +197,11 @@ class EnsembleLLMsApp:
         # Save the aggregated file to data folder
         aggregated_file_path = os.path.join(self.data_folder_path, f"{self.dataset_id}_{self.project_name}_aggregated.csv")
         df.to_csv(aggregated_file_path, index=False)
-        print(f"\nSave the aggregated data into {aggregated_file_path}.")
+        print(f"\nSave the aggregated data into {os.path.relpath(aggregated_file_path,self.home_path)}")
         return df
 
     
-    def vote(self,df:pd.DataFrame,min_winning_share:list=[]):
+    def vote(self,df:pd.DataFrame,var_val_list:str='',min_winning_share:list=[]):
         """Vote function:
         For each variable in vars predicted by each of predictors, use maximum vote above threshold method to vote, 
         e.g. 7 voters vote for 3 options, the option with at least 3 votes win (threshold 3/7)
@@ -229,19 +233,23 @@ class EnsembleLLMsApp:
                     df[f'votes_{var}_{val}'] = 0 # initialize as 0
                     df[f"votes_{var}_{val}"] = (df[cols_to_check] == val).sum(axis=1)
                     votes_cols += [f'votes_{var}_{val}']
+                # Handle non-standard values
+                df[f'votes_{var}_non-standard'] = 0 # initialize as 0
+                df[f"votes_{var}_non-standard"] = (~df[cols_to_check].isin(vals)).sum(axis=1)
                 # Handle empty value (LLM failed to respond)
-                df[f'votes_{var}_Non-response'] = 0 # initialize as 0
-                df[f"votes_{var}_Non-response"] = (df[cols_to_check] == '').sum(axis=1)
+                df[f'votes_{var}_no_response'] = 0 # initialize as 0
+                df[f"votes_{var}_non_response"] = (df[cols_to_check] == '').sum(axis=1)
 
                 # Infer var's value with max votes
                 df[f'{var}_voted'] = '' # initialize the col <var> for the voted value
                 # for each row in df, infer a value
                 df[f'{var}_voted'] = df[votes_cols].apply(lambda row: self.infer_value_with_vote(row,vals),axis=1)
         
-        # vote_result_file_path = os.path.join(self.data_folder_path, f"{self.dataset_id}_{self.project_name}_voted.csv")        
-        vote_result_file_path = os.path.join(self.data_folder_path, f"{self.project_name}_voted.csv")        
+        vote_result_file_path = os.path.join(self.data_folder_path, f"{self.dataset_id}_{self.project_name}_voted.csv")        
+        # vote_result_file_path = os.path.join(self.data_folder_path, f"{self.project_name}_voted.csv")
+                                                
         df.to_csv(vote_result_file_path, index=False)
-        print(f"Vote result saved to {vote_result_file_path}.")
+        print(f"Vote result saved to {os.path.relpath(vote_result_file_path,self.home_path)}.")
         return df
         
 
@@ -265,11 +273,35 @@ class EnsembleLLMsApp:
             else: # greater than wining threshold and no tie, return the wining value.
                 return vals[votes_share_list.index(max_share)]
                 
+    def apply_Postprocessing(self, function: Postprocessing) -> pd.DataFrame:
+        """
+        Interface: Apply any function that implements Postprocessing interface
+       
+        Args:
+            funtion: An instance of a class that implements Postprocessing
+       
+        Returns:
+            Resulting DataFrame after applying the funtion
+        """
+        try:
+            result = funtion.execute(self,**kwargs)
+            # to do ...
+            return result
+        except Exception as e:
+            print(f"Error: when applying user defined funtion: {e}")
+            return pd.DataFrame()
 
-def run(command:str=''):
+
+def run(command:str='',**kwargs) -> EnsembleLLMsApp:
     """Run the ensemble LLM application with the ensemble_config.yaml and launch all the specified llm_apps."""
     
-    ensemble = EnsembleLLMsApp('./ensemble_config.yaml')
+    commands = ['init','launch','aggregate','vote',]
+        
+    if command in commands:
+        try:
+            ensemble = EnsembleLLMsApp('./ensemble_config.yaml')
+        except Exception as e:
+            print(f"Failed to init the EnsembleLLMsApp.\n{e}")
     
     if command=='launch':
         ensemble.launch_llm_apps()
@@ -277,7 +309,13 @@ def run(command:str=''):
         ensemble.aggregate()
     elif command=='vote':
         df = pd.read_csv(os.path.join(ensemble.data_folder_path, f"{ensemble.dataset_id}_{ensemble.project_name}_aggregated.csv"), 
-                         keep_default_na=False)        
+                         keep_default_na=False)
+        if 'var_val_list' in kwargs:
+            ensemble.var_val_list = json.loads(kwargs['var_val_list'])
+            print()
+            print(kwargs['var_val_list'])
+            print(ensemble.var_val_list)
+            print()
         ensemble.vote(df=df)
     elif command=='evaluate':
         ensemble.evaluate()
@@ -287,8 +325,15 @@ def run(command:str=''):
         df = pd.read_csv(os.path.join(ensemble.data_folder_path, f"{ensemble.dataset_id}_{ensemble.project_name}_aggregated.csv"), 
                          keep_default_na=False)        
         ensemble.vote(df=df)
-        # ensemble.evaluate()
-
+    elif command=='init':
+        pass
+    else:
+        print(f"Unrecognized command: {command} \nSupported commands:")
+        for cmd in commands:
+            print(cmd)
+        return None
+        
+    return ensemble
 
 # Run the LLM application in commandline
 if __name__ == "__main__":

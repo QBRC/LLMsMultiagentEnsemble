@@ -1,0 +1,15 @@
+- dataset_id: ECG
+  estimated_cost: $0
+  failed_json_loading: []
+  failed_request: []
+  framework: Ollama
+  input_data_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/demo/data/ECG_data.csv
+  model: openhermes
+  number_of_failed_json_loading: 0
+  temperature: 0.0
+  time_ended: '2025-08-24 23:20:26.303259'
+  time_started: '2025-08-24 23:20:21.198335'
+  time_used: 0.085082 minutes
+  total_input_tokens: 1270
+  total_output_tokens: 166
+  total_tokens: 1436

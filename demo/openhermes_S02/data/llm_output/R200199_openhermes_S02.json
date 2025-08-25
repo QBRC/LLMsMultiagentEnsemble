@@ -1,0 +1,5 @@
+{
+"AF_Diagnosis": "Probable AF",
+"AF_pr": "0.95",
+"Explanation": "The cardiologist's diagnostic statement of 'Probable atrial flutter with conducted beats and ventricular premature beats' indicates a high confidence in the diagnosis of atrial flutter (AFL). The presence of conducted complexes with leftward axis, low limb lead voltage, right bundle-branch block, and ST-T wave abnormalities further support the diagnosis. However, since there is a mention of ventricular premature beats which are new since a certain time point, it slightly reduces the certainty of the diagnosis but still keeps it in the 'Probable AF' category."
+}

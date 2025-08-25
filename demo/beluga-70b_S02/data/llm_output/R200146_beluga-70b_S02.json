@@ -1,0 +1,5 @@
+{
+"AF_Diagnosis": "Probable AF",
+"AF_pr": 0.95,
+"Explanation": "The report mentions 'unspecified atrial fibrillation' as the clinical indication and does not mention any other possible rhythms. While it is not explicitly stated that the current tracing shows AFib, the high likelihood of AFib based on the clinical indication suggests a probable AF diagnosis with a probability of 0.95."
+}

@@ -1,0 +1,5 @@
+{ 
+"AF_Diagnosis": "Non-AF", 
+"AF_pr": "0.00", 
+"Explanation": "The ECG report identifies the cardiac rhythm as probable atrial flutter with conducted beats and ventricular premature beats. It does not mention atrial fibrillation, thus the diagnosis is Non-AF." 
+}

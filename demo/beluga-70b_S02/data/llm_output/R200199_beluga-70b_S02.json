@@ -1,0 +1,5 @@
+{
+"AF_Diagnosis": "Probable AF",
+"AF_pr": 0.95,
+"Explanation": "The report states 'Probable atrial flutter with conducted beats and ventricular premature beats,' indicating a high likelihood of atrial fibrillation or atrial flutter with some degree of certainty. The estimated probability of AF (AF_pr) is 0.95, which is close to 1.0 due to the higher confidence expressed in the diagnosis."
+}
