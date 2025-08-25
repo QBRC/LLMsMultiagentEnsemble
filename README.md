@@ -28,5 +28,15 @@ Modify setup.py for setting up the paths to local packages in EnsemLLMs.
 
 "./demo/demo.ipynb" provides an example to run EnsemLLMs for ECG report labeling.
 
+### About data
+
+In demo, ECG_Absert.csv contains two ECG reports, which were abserted from original MIMIC-IV ECG dataset and used to demo how to use EnsemLLMs.
+
+The full MIMIC-IV ECG dataset can be found at:
+
+https://physionet.org/content/mimic-iv-ecg/1.0/
+
+
+
 
 
