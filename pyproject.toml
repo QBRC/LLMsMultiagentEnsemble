@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "llm-agent"
+name = "LLMsMultiagentEnsemble"
 version = "0.1.0"
-description = "LLM powered Agent"
+description = "Large Language Model powered multiagent ensemble"
 authors = ["Jingwei Huang <jingwei.huang@utsouthwestern.edu>"]
 readme = "README.md"
 
