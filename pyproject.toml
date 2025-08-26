@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "llm-agent"
+version = "0.1.0"
+description = "LLM powered Agent"
+authors = ["Jingwei Huang <jingwei.huang@utsouthwestern.edu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+openai = "^1.50.0"
+ollama = "^0.5.1"
+transformers = "^4.46.1"
+ipykernel = "^6.29.5"
+jupyter = "^1.1.1"
+pandas = "^2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
