@@ -59,7 +59,7 @@ class LLMApp:
                 self.input_text_col = self.app_config['input_text_column_name']
                 self.input_data_id_col = self.app_config['input_data_id_column_name']
                 # output data
-                self.var_val_list_path = os.path.realpath(self.app_config['var_val_list_path'])
+                self.var_val_dict_path = os.path.realpath(self.app_config['var_val_dict_path'])
                 self.json_output_template_path = os.path.realpath(self.app_config['json_output_template_path'])
                 try:
                     with open(self.json_output_template_path, 'r') as f:
@@ -88,7 +88,7 @@ class LLMApp:
             sys_msg = f.read()
         with open(self.prompt_file_path, 'r') as f:
             instruction = f.read()
-        with open(self.var_val_list_path, 'r') as f:
+        with open(self.var_val_dict_path, 'r') as f:
             var_val_list = f.read() # text structured, but not verified json
         with open(self.json_output_template_path, 'r') as f:
             json_template = f.read() # text structured, but not verified json

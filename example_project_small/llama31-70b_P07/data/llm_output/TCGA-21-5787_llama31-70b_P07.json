@@ -7,7 +7,7 @@
   "pT_stated": "T2",
   "pT": "T2",
   "pT_CD": "1.00",
-  "pT_evidence": "LUNG TEMPLATE Specimen Type Wedge resection Laterality Left Tumor Site Lingula Tumor Size Greatest dimension: 15 em (Tl if <=3.0 em; othe7wis T2)",
+  "pT_evidence": "LUNG TEMPLATE Specimen Type Wedge resection Laterality Left Tumor Site Lingula Tumor Size Greatest dimension: 15 em (Tl if <=3.0 em; otherwise T2)",
   
   "pN_stated": "N2",
   "pN": "N2",
@@ -17,12 +17,12 @@
   "tumor_stage_stated": "Unknown",
   "tumor_stage": "Stage IIIA",
   "tumor_stage_CD": "1.00",
-  "tumor_stage_evidence": "Based on pT and pN categories, T2 N2 Mx corresponds to Stage IIIA according to AJCC7 criteria.",
+  "tumor_stage_evidence": "Based on pT category (T2) and pN category (N2), according to AJCC7 criteria.",
   
   "histologic_diagnosis_stated": "Squamous cell carcinoma",
   "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
   "histologic_diagnosis_CD": "1.00",
   "histologic_diagnosis_evidence": "Left lingula, resection: - Squamous cell carcinoma, 4.2 em, poorly differentiated.",
   
-  "comment": "The pathology report describes a left lung wedge resection with a 4.2 cm squamous cell carcinoma. The tumor does not involve the visceral pleura and has lymphovascular invasion. Thirteen regional lymph nodes are positive for metastatic carcinoma, corresponding to N2 disease. Based on these findings, the tumor is classified as T2N2Mx, which corresponds to Stage IIIA according to AJCC7 criteria."
+  "comment": "The pathology report describes a lung cancer specimen with a tumor size of 4.2 cm and a histologic diagnosis of squamous cell carcinoma. The tumor is classified as T2N2Mx according to the pTNM system. Based on the AJCC7 criteria, the tumor stage is estimated to be Stage IIIA."
 }

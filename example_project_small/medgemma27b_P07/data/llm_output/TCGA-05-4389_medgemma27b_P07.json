@@ -1,0 +1,25 @@
+```json
+{
+"tumor_size_max_dimension_stated": "Unknown",
+"tumor_size_max_dimension": "Unknown",
+"tumor_size_max_dimension_CD": 0.00,
+"tumor_size_max_dimension_evidence": "The report does not state the tumor size.",
+"pT_stated": "T1",
+"pT": "T1",
+"pT_CD": 1.00,
+"pT_evidence": "The report states 'pT1'.",
+"pN_stated": "N0",
+"pN": "N0",
+"pN_CD": 1.00,
+"pN_evidence": "The report states 'pN0'.",
+"tumor_stage_stated": "IA",
+"tumor_stage": "Stage IA",
+"tumor_stage_CD": 1.00,
+"tumor_stage_evidence": "The report states 'stage IA'.",
+"histologic_diagnosis_stated": "Mixed bronchopulmonary adenocarcinoma",
+"histologic_diagnosis": "Lung Adenocarcinoma",
+"histologic_diagnosis_CD": 1.00,
+"histologic_diagnosis_evidence": "The report states 'Mixed bronchopulmonary adenocarcinoma'.",
+"comment": "The pathology report describes a mixed bronchopulmonary adenocarcinoma, completely removed by wedge excision. The tumor is classified as pT1, pN0, R0, stage IA. The visceral pleura, resection margins, and lymph nodes are tumor-free. Immunohistological investigations are pending to confirm the bronchopulmonary origin."
+}
+```

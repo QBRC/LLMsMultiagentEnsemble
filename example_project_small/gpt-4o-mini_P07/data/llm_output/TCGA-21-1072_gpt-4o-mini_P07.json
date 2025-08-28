@@ -24,5 +24,5 @@
   "histologic_diagnosis_CD": 1.00,
   "histologic_diagnosis_evidence": "The final diagnosis explicitly states 'KERATINIZING SQUAMOUS CELL CARCINOMA GRADE II', confirming the histologic diagnosis.",
   
-  "comment": "The pathology report indicates a diagnosis of keratinizing squamous cell carcinoma grade II with a maximum tumor size of 2.5 cm. There is no lymph node involvement, and the tumor is classified as Stage IIB according to AJCC 7th edition criteria. The bronchial and vascular margins are negative for tumor, indicating a potentially favorable prognosis."
+  "comment": "The pathology report indicates a diagnosis of Keratinizing Squamous Cell Carcinoma Grade II with a maximum tumor size of 2.5 cm. There is no lymph node involvement, and the tumor is classified as Stage IIB according to AJCC 7th edition criteria. The margins are negative for tumor, which is a favorable finding."
 }

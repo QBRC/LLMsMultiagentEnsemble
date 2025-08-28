@@ -36,6 +36,8 @@ class LLMAgent:
         self.client = None
         self.tokenizer = None
 
+        torch.cuda.empty_cache()
+
         # ------------------------
         # if framework is empty, use transfomers to construct a LM from model path (huggingface or local)
         if not framework or framework in ['huggingface', 'Huggingface']: 
@@ -44,7 +46,7 @@ class LLMAgent:
             bnb_bits = quantification # config, if use quantification 
             if bnb_bits is None or bnb_bits not in [4,8]:
                 self.client = AutoModelForCausalLM.from_pretrained(model, 
-                                                             torch_dtype=torch.float16, 
+                                                             torch_dtype=torch.bfloat16, 
                                                              # quantization_config=quantization_config,
                                                              # low_cpu_mem_usage=True, 
                                                              device_map="auto")
@@ -109,7 +111,11 @@ class LLMAgent:
                 # construct messages
                 message =  f"{system_message}### User: {prompt}\n\n### Output:\n"
                 # tokenize input
-                inputs = self.tokenizer(message, return_tensors="pt").to("cuda")
+                inputs = self.tokenizer(message, 
+                                        return_tensors="pt",
+                                        padding="longest",
+                                        pad_to_multiple_of=8, # <-- ensures seq_len % 8 == 0
+                                       ).to("cuda")
                 # get output from LLM with the inputs
                 response = self.client.generate(**inputs, 
                                         do_sample=True,

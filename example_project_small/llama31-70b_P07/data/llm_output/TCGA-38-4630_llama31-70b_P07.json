@@ -7,22 +7,22 @@
   "pT_stated": "Unknown",
   "pT": "T2a",
   "pT_CD": "0.80",
-  "pT_evidence": "Tumor size: 4.5 x 4.1 x 3.5 cm, directly involving a medium sized bronchus (Gross Description)",
+  "pT_evidence": "Tumor size: 4.5 cm diameter, and the tumor grossly comes to within 1 mm of the visceral pleural surface but not directly involving it (Gross Description)",
   
   "pN_stated": "Unknown",
   "pN": "N0",
   "pN_CD": "1.00",
-  "pN_evidence": "No metastatic carcinoma identified (0/7 total) (Light Microscopy)",
+  "pN_evidence": "No metastatic carcinoma identified (0/7 total) in lymph nodes (Light Microscopy)",
   
   "tumor_stage_stated": "Unknown",
   "tumor_stage": "Stage IB",
   "tumor_stage_CD": "0.80",
-  "tumor_stage_evidence": "pT: T2a, pN: N0, no distant metastasis (AJCC7 criteria)",
+  "tumor_stage_evidence": "Based on AJCC7 criteria, pT is estimated as T2a and pN as N0",
   
   "histologic_diagnosis_stated": "Adenocarcinoma, poorly differentiated, with focal papillary architecture",
   "histologic_diagnosis": "Lung Adenocarcinoma",
   "histologic_diagnosis_CD": "1.00",
   "histologic_diagnosis_evidence": "Tumor histologic type (WHO classification): adenocarcinoma, with focal papillary features (Light Microscopy)",
   
-  "comment": "The pathology report describes a lung adenocarcinoma with poorly differentiated and focal papillary architecture. The tumor size is 4.5 cm in greatest dimension, and it directly involves a medium-sized bronchus. There is no metastatic carcinoma identified in the lymph nodes (0/7 total). Based on AJCC7 criteria, the estimated pT category is T2a, pN category is N0, and tumor stage is Stage IB."
+  "comment": "The pathology report describes a lung adenocarcinoma in the right upper lobe, with a tumor size of 4.5 cm diameter and no lymph node metastasis. The tumor stage is estimated as Stage IB based on AJCC7 criteria."
 }

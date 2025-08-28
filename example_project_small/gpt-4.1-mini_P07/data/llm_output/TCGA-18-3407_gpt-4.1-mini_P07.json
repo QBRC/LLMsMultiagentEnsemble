@@ -2,27 +2,27 @@
   "tumor_size_max_dimension_stated": "4.0 cm",
   "tumor_size_max_dimension": 4.0,
   "tumor_size_max_dimension_CD": 1.00,
-  "tumor_size_max_dimension_evidence": "Diagnosis states invasive squamous cell carcinoma measuring 4.0 cm maximum dimension in left upper lobe specimen.",
+  "tumor_size_max_dimension_evidence": "Diagnosis section states invasive squamous cell carcinoma measuring 4.0 cm maximum dimension.",
 
   "pT_stated": "T2",
   "pT": "T2a",
   "pT_CD": 0.90,
-  "pT_evidence": "Tumor size is 4.0 cm with no invasion into visceral pleura. According to AJCC 7th edition, tumor >3 cm and ≤5 cm without pleural invasion is T2a.",
+  "pT_evidence": "Tumor size is 4.0 cm and no invasion into visceral pleura; according to AJCC7, tumor >3 cm and ≤5 cm without pleural invasion is T2a.",
 
   "pN_stated": "N0",
   "pN": "N0",
   "pN_CD": 1.00,
-  "pN_evidence": "All examined lymph nodes including paratracheal, subcarinal, lobar nodes are negative for malignancy.",
+  "pN_evidence": "Multiple lymph nodes examined (paratracheal, subcarinal, lobar) all negative for malignancy.",
 
-  "tumor_stage_stated": "T2N0",
-  "tumor_stage": "Stage IB",
+  "tumor_stage_stated": "Stage IIA",
+  "tumor_stage": "Stage IIA",
   "tumor_stage_CD": 0.90,
-  "tumor_stage_evidence": "Based on pT2a and pN0 without evidence of metastasis, AJCC 7th edition stage is IB.",
+  "tumor_stage_evidence": "Based on AJCC7, T2a N0 corresponds to Stage IIA lung cancer.",
 
   "histologic_diagnosis_stated": "Invasive moderately-differentiated squamous cell carcinoma",
   "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
   "histologic_diagnosis_CD": 1.00,
-  "histologic_diagnosis_evidence": "Diagnosis clearly states invasive moderately-differentiated squamous cell carcinoma.",
+  "histologic_diagnosis_evidence": "Diagnosis states invasive moderately-differentiated squamous cell carcinoma in left upper lobe lung specimen.",
 
-  "comment": "The pathology report describes a 4.0 cm invasive moderately-differentiated squamous cell carcinoma in the left upper lobe with no invasion into the visceral pleura. Multiple lymph nodes from various stations including paratracheal, subcarinal, and lobar nodes are negative for malignancy, indicating no nodal metastasis. The bronchial resection margin is negative. The tumor is staged as T2aN0, corresponding to Stage IB by AJCC 7th edition criteria. The report also notes nonspecific pleuropulmonary fibrosis and pulmonary emphysema. The diagnosis and staging appear complete and consistent with the findings. No evidence of distant metastasis is provided. The certainty of staging is high given the clear tumor size and negative lymph nodes. No critical issues noted."
+  "comment": "The pathology report describes a 4.0 cm invasive moderately-differentiated squamous cell carcinoma in the left upper lobe of the lung with no invasion into the visceral pleura. Multiple lymph nodes from various stations including paratracheal, subcarinal, and lobar nodes were examined and found negative for malignancy, indicating no nodal metastasis. The bronchial resection margin is negative. The tumor is staged as T2a N0, corresponding to Stage IIA according to AJCC 7th edition criteria. The report indicates apparent complete resection of the tumor. No evidence of distant metastasis is provided. The certainty of tumor size and nodal status is high given the detailed examination. The pT category is estimated as T2a based on tumor size and absence of pleural invasion. Overall, the report is comprehensive and supports a confident staging and diagnosis. No critical issues noted."
 }

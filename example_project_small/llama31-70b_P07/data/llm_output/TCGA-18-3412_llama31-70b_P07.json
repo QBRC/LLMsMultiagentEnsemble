@@ -12,17 +12,17 @@
   "pN_stated": "N0",
   "pN": "N0",
   "pN_CD": "1.00",
-  "pN_evidence": "All lymph nodes examined are negative for malignancy, including lobar and segmental peribronchial lymph nodes.",
+  "pN_evidence": "All lymph nodes examined are negative for malignancy, including lobar and interlobar lymph nodes.",
   
-  "tumor_stage_stated": "Stage IB",
-  "tumor_stage": "Stage IB",
+  "tumor_stage_stated": "Stage II",
+  "tumor_stage": "Stage II",
   "tumor_stage_CD": "0.80",
-  "tumor_stage_evidence": "Based on the estimated pT category (T2) and pN category (N0), the tumor stage is Stage IB according to AJCC7 criteria.",
+  "tumor_stage_evidence": "Based on the estimated pT category (T2) and pN category (N0), the tumor stage is Stage II according to AJCC7 criteria.",
   
   "histologic_diagnosis_stated": "Squamous cell carcinoma, moderately differentiated",
   "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
   "histologic_diagnosis_CD": "1.00",
   "histologic_diagnosis_evidence": "The pathology report states that the tumor is a squamous cell carcinoma, moderately differentiated.",
   
-  "comment": "This lung cancer case is staged as pT2N0M0 according to AJCC7 criteria. The tumor size is 4.7 cm and the histologic diagnosis is squamous cell carcinoma, moderately differentiated."
+  "comment": "This lung cancer case is staged as pT2N0 according to AJCC7 criteria. The tumor size is 4.7 cm and has invaded into peribronchial fatty tissue. All lymph nodes examined are negative for malignancy."
 }

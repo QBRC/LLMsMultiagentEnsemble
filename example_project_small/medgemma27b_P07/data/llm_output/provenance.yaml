@@ -1,0 +1,15 @@
+- dataset_id: lung
+  estimated_cost: $0
+  failed_json_loading: []
+  failed_request: []
+  framework: huggingface
+  input_data_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/example_project_small/data/tcga_pan_lung_samples.csv
+  model: google/medgemma-27b-text-it
+  number_of_failed_json_loading: 0
+  temperature: 0.0
+  time_ended: '2025-08-28 14:35:07.059161'
+  time_started: '2025-08-28 14:26:21.598009'
+  time_used: 8.757686 minutes
+  total_input_tokens: 0
+  total_output_tokens: 0
+  total_tokens: 0

@@ -1,0 +1,28 @@
+{
+  "tumor_size_max_dimension_stated": "Unknown",
+  "tumor_size_max_dimension": "Unknown",
+  "tumor_size_max_dimension_CD": 0.00,
+  "tumor_size_max_dimension_evidence": "No specific measurement of tumor size is provided in the report.",
+  
+  "pT_stated": "pT4",
+  "pT": "T4",
+  "pT_CD": 1.00,
+  "pT_evidence": "The report explicitly states pT4, indicating extensive local invasion.",
+  
+  "pN_stated": "pN1",
+  "pN": "N1",
+  "pN_CD": 1.00,
+  "pN_evidence": "The report explicitly states pN1, indicating regional lymph node involvement.",
+  
+  "tumor_stage_stated": "Stage IV",
+  "tumor_stage": "Stage IV",
+  "tumor_stage_CD": 1.00,
+  "tumor_stage_evidence": "The report explicitly states the tumor stage as IV based on pT4 and pN1 with metastatic dissemination.",
+  
+  "histologic_diagnosis_stated": "mixed adenocarcinoma",
+  "histologic_diagnosis": "Lung Adenocarcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "The report describes the tumor as a histologically mixed adenocarcinoma, confirming it as a type of lung adenocarcinoma.",
+  
+  "comment": "The pathology report indicates an extensive and locoregionally advanced mixed adenocarcinoma of the right lower lobe with pleural invasion and lymph node metastasis. The tumor is classified as pT4, pN1, and stage IV, confirming its advanced nature. The histological analysis supports the diagnosis of lung adenocarcinoma with mixed differentiation. Further immunohistochemical analysis is pending to confirm the bronchopulmonary origin and rule out late metastatic spread from breast carcinoma."
+}

@@ -1,0 +1,15 @@
+- dataset_id: lung
+  estimated_cost: $0
+  failed_json_loading: []
+  failed_request: []
+  framework: Ollama
+  input_data_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/example_project_small/data/tcga_pan_lung_samples.csv
+  model: qwen2:72b
+  number_of_failed_json_loading: 0
+  temperature: 0.0
+  time_ended: '2025-08-22 03:45:34.072345'
+  time_started: '2025-08-22 03:41:25.463389'
+  time_used: 4.143483 minutes
+  total_input_tokens: 17007
+  total_output_tokens: 5119
+  total_tokens: 22126

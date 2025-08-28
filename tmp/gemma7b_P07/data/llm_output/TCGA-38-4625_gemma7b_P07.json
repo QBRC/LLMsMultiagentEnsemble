@@ -1,0 +1,21 @@
+{
+  "tumor_size_max_dimension": "5.0 cm",
+  "pT": "T2a",
+  "pN": "N0",
+  "tumor_stage": "Stage IB",
+  "histologic_diagnosis": "Lung Adenocarcinoma",
+
+  "tumor_size_max_dimension_stated": "5.0 em",
+  "tumor_size_max_dimension_CD": 0.8,
+  "tumor_size_max_dimension_evidence": "The tumor size is grossly estimated to be 5.0 cm in greatest dimension based on the pathological examination.",
+
+  "pT_stated": "Tis",
+  "pT_CD": 0.6,
+  "pT_evidence": "The tumor is grossly described as circumscribed, white/tan, focally softened, and focally hemorrhagic nodule, which is located under the peripheral pleura. The tumor appears to be encapsulated by the pleura and does not invade the bronchus.",
+
+  "pN_stated": "N0",
+  "pN_CD": 0.9,
+  "pN_evidence": "No tumor involvement of the lymph nodes is seen in the pathology report.",
+
+  "comment": "The tumor is markedly pleomorphic and high grade, with rare mucin positive cells. This favors the interpretation of adenocarcinoma. The tumor stage is estimated to be Stage IB based on AJCC 7th edition for lung carcinoma staging manual. The surgical margins are free of tumor. There is no evidence of distant metastasis."
+}

@@ -1,0 +1,25 @@
+```json
+{
+  "tumor_size_max_dimension_stated": "5.0 cm",
+  "tumor_size_max_dimension": "5.0",
+  "tumor_size_max_dimension_CD": 1.00,
+  "tumor_size_max_dimension_evidence": "Tumor size 5.0 cm in greatest dimension.",
+  "pT_stated": "Unknown",
+  "pT": "T2a",
+  "pT_CD": 0.95,
+  "pT_evidence": "Tumor size is 5.0 cm, which is >3 cm but <=5 cm. According to AJCC 7th edition, this corresponds to T2a.",
+  "pN_stated": "N0",
+  "pN": "N0",
+  "pN_CD": 1.00,
+  "pN_evidence": "No tumor seen in two hilar lymph nodes from lobectomy specimen. No tumor seen in one lymph node (0/1) from station 11. No tumor seen in one lymph node (0/1) from R4. No tumor seen in one lymph node (0/1) from station 7. Total 4 lymph nodes examined, all negative for tumor.",
+  "tumor_stage_stated": "Unknown",
+  "tumor_stage": "Stage IIA",
+  "tumor_stage_CD": 0.95,
+  "tumor_stage_evidence": "Based on pT2a and pN0, according to AJCC 7th edition staging criteria for lung cancer, the stage is IIA.",
+  "histologic_diagnosis_stated": "adenocarcinoma",
+  "histologic_diagnosis": "Lung Adenocarcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "Tumor histologic type (WHO classification) : adenocarcinoma",
+  "comment": "The patient underwent a right upper lobe lobectomy for a right upper lobe mass. The final diagnosis is poorly differentiated adenocarcinoma, measuring 5.0 cm in greatest dimension. The tumor is located peripherally and abuts the pleura without invasion. Surgical margins are free of tumor. Four regional lymph nodes were examined and were negative for tumor. Based on AJCC 7th edition criteria, the tumor is staged as pT2a N0, Stage IIA."
+}
+```

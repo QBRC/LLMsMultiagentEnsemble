@@ -7,22 +7,22 @@
     "pT_stated": "T4",
     "pT": "T4",
     "pT_CD": 1.00,
-    "pT_evidence": "The tumor classification on the basis of this material is pT4, indicating a tumor of any size that invades the mediastinum or beyond.",
+    "pT_evidence": "The tumor classification on the basis of this material is pT4, as stated in the pathology report.",
 
     "pN_stated": "N1",
     "pN": "N1",
     "pN_CD": 1.00,
-    "pN_evidence": "The tumor classification on the basis of this material is pN1, indicating metastasis to ipsilateral peribronchial and/or hilar lymph nodes.",
+    "pN_evidence": "The tumor classification on the basis of this material is pN1, as stated in the pathology report.",
 
     "tumor_stage_stated": "Stage IV",
     "tumor_stage": "Stage IV",
     "tumor_stage_CD": 1.00,
-    "tumor_stage_evidence": "The tumor classification on the basis of this material is pT4 pN1 pM1, which corresponds to Stage IV according to AJCC7 criteria.",
+    "tumor_stage_evidence": "The tumor classification on the basis of this material is stage IV, as stated in the pathology report, based on pT4 and pN1 categories.",
 
     "histologic_diagnosis_stated": "Mixed adenocarcinoma",
     "histologic_diagnosis": "Lung Adenocarcinoma",
     "histologic_diagnosis_CD": 0.90,
-    "histologic_diagnosis_evidence": "The pathology report describes a mixed adenocarcinoma with glandular tubulopapillary and bronchioloalveolar differentiation, which is consistent with lung adenocarcinoma.",
+    "histologic_diagnosis_evidence": "The immune profile confirms the diagnosis of an adenocarcinoma of the lung of mixed differentiation, as stated in the pathology report.",
 
-    "comment": "The pathology report describes an extensive and locoregionally advanced central to peripheral bronchopulmonary tumor with pleural invasion and metastatic dissemination. The immune profile confirms the diagnosis of an adenocarcinoma of the lung of mixed differentiation."
+    "comment": "The pathology report describes a locoregionally advanced, central to peripheral, very likely primarily peripheral bronchopulmonary, histologically mixed adenocarcinoma of the right lower lobe of the lung with pleural invasion and metastatic dissemination to both pleural layers and lymph nodes. The tumor classification is pT4 pN1 pM1 (P/E) V1 RX, stage IV."
 }

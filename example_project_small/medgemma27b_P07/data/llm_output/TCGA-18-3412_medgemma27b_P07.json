@@ -1,0 +1,25 @@
+```json
+{
+  "tumor_size_max_dimension_stated": "4.7 cm",
+  "tumor_size_max_dimension": "4.7",
+  "tumor_size_max_dimension_CD": 1.00,
+  "tumor_size_max_dimension_evidence": "Tumor greatest diameter 4.7 cm.",
+  "pT_stated": "T2",
+  "pT": "T2b",
+  "pT_CD": 0.95,
+  "pT_evidence": "Tumor greatest diameter 4.7 cm. At the hilum, tumor has invaded into peribronchial fatty tissue. Bronchial resection margin positive for tumor involvement. Based on AJCC 7th edition, tumor size >3cm but <=5cm (T2a) or >5cm (T2b). Invasion into peribronchial fatty tissue or visceral pleura (T2b). Positive bronchial resection margin indicates invasion into the main bronchus, which is T2b. The report states T2NO, but the description suggests T2b.",
+  "pN_stated": "N0",
+  "pN": "N0",
+  "pN_CD": 0.95,
+  "pN_evidence": "2 lobar peribronchial lymph nodes negative for tumor. All 4 lobar and 3 segmental peribronchial lymph nodes negative for tumor. Interlobar ST11, lobar ST12, Aorta-pulmonary ST5 negative for malignancy.",
+  "tumor_stage_stated": "Stage II",
+  "tumor_stage": "Stage IIB",
+  "tumor_stage_CD": 0.95,
+  "tumor_stage_evidence": "Based on AJCC 7th edition criteria, pT2b and pN0 corresponds to Stage IIB.",
+  "histologic_diagnosis_stated": "Squamous cell carcinoma",
+  "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "Squamous cell carcinoma, moderately differentiated, central.",
+  "comment": "The patient underwent left lower lobe lobectomy and completion left pneumonectomy for lung cancer. The final diagnosis is moderately differentiated squamous cell carcinoma. The tumor size is 4.7 cm. The tumor invaded into peribronchial fatty tissue and the bronchial resection margin was positive for tumor involvement, suggesting T2b stage. Lymph nodes examined (interlobar ST11, lobar ST12, lobar/segmental peribronchial nodes, aorta-pulmonary ST5) were negative for malignancy, suggesting N0 stage. Based on AJCC 7th edition criteria, the tumor stage is IIB (T2b N0 M0). The report mentions T2NO, but the description of invasion into peribronchial fatty tissue and positive bronchial resection margin points towards T2b."
+}
+```

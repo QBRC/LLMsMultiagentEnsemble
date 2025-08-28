@@ -1,0 +1,25 @@
+```json
+{
+  "tumor_size_max_dimension_stated": "4.0 cm",
+  "tumor_size_max_dimension": "4.0",
+  "tumor_size_max_dimension_CD": 1.00,
+  "tumor_size_max_dimension_evidence": "The gross description states the tumor measures 4.0 cm in maximum dimension.",
+  "pT_stated": "T2",
+  "pT": "T2a",
+  "pT_CD": 0.95,
+  "pT_evidence": "The pathology report states 'Invasive moderately-differentiated squamous cell carcinoma, peripheral but with no invasion into overlying visceral pleura, 4.0 cm maximum dimension'. According to AJCC 7th edition, a tumor >3 cm but <=5 cm in greatest dimension is classified as T2a. The report also states 'apparent complete resection of a T2NO squamous cell carcinoma' in the comment section.",
+  "pN_stated": "N0",
+  "pN": "N0",
+  "pN_CD": 1.00,
+  "pN_evidence": "The report states '1-5. ST2R upper paratracheal, right low paratracheal 4R, ST7 subcarinal, left low paratracheal 4L and inferior pulmonary ligament ST9 lymph nodes - Negative for malignancy.' and '6. Left upper lobe... c) Lobar lymph nodes (2 examined) - Negative for malignancy.' The comment section also states 'apparent complete resection of a T2NO squamous cell carcinoma'.",
+  "tumor_stage_stated": "Unknown",
+  "tumor_stage": "Stage IIA",
+  "tumor_stage_CD": 0.95,
+  "tumor_stage_evidence": "Based on the estimated pT (T2a) and pN (N0) categories, and assuming no distant metastasis (M0), the tumor stage is Stage IIA according to AJCC 7th edition criteria.",
+  "histologic_diagnosis_stated": "Squamous cell carcinoma",
+  "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "The diagnosis section states 'Invasive moderately-differentiated squamous cell carcinoma'.",
+  "comment": "The pathology report describes a moderately-differentiated squamous cell carcinoma of the left upper lobe measuring 4.0 cm in maximum dimension. The tumor is peripheral and does not invade the visceral pleura. All examined regional lymph nodes (paratracheal, subcarinal, inferior pulmonary ligament, and lobar nodes) are negative for malignancy. The final diagnosis is consistent with a pT2a N0 tumor. Based on AJCC 7th edition staging, this corresponds to Stage IIA, assuming no distant metastasis. The resection margins are negative."
+}
+```

@@ -21,7 +21,7 @@
   
   "histologic_diagnosis_stated": "Mixed bronchopulmonary adenocarcinoma",
   "histologic_diagnosis": "Lung Adenocarcinoma",
-  "histologic_diagnosis_CD": 0.75,
+  "histologic_diagnosis_CD": 0.90,
   "histologic_diagnosis_evidence": "The report describes the tumor as mixed bronchopulmonary adenocarcinoma, which is consistent with lung adenocarcinoma.",
   
   "comment": "The pathology report indicates a mixed bronchopulmonary adenocarcinoma that has been completely removed with no evidence of tumor in the resection margins or lymph nodes. The tumor is classified as pT1, pN0, and stage IA, indicating an early stage of lung cancer. Further confirmation through immunohistological investigations is pending."

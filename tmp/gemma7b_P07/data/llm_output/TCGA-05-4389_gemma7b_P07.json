@@ -1,0 +1,9 @@
+{
+  "tumor_size_max_dimension": "2.5 cm",
+  "pT": "T1",
+  "pN": "N0",
+  "tumor_stage": "Stage IA",
+  "histologic_diagnosis": "Lung Adenocarcinoma",
+
+  "comment": "The pathology report describes a mixed bronchopulmonary adenocarcinoma. The tumor is completely removed by wedge excision of sample 1 and the visceral pleura, the right upper lobe of sample 2, including its resection margin of the bronchus and vessels and all the lymph nodes removed are tumor-free. Based on the available evidence, the estimated tumor stage is IA. The tumor classification is pT1, pN0, R0."
+}

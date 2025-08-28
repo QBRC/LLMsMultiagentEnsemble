@@ -1,0 +1,28 @@
+{
+    "tumor_size_max_dimension_stated": "Unknown",
+    "tumor_size_max_dimension": "Unknown",
+    "tumor_size_max_dimension_CD": 0.00,
+    "tumor_size_max_dimension_evidence": "No information provided in the pathology report.",
+
+    "pT_stated": "pT1",
+    "pT": "T1",
+    "pT_CD": 1.00,
+    "pT_evidence": "The tumor classification is stated as pT1 in the pathology report.",
+
+    "pN_stated": "pN0",
+    "pN": "N0",
+    "pN_CD": 1.00,
+    "pN_evidence": "The tumor classification is stated as pN0 in the pathology report, and all lymph nodes removed are tumor-free.",
+
+    "tumor_stage_stated": "stage IA",
+    "tumor_stage": "Stage IA",
+    "tumor_stage_CD": 1.00,
+    "tumor_stage_evidence": "The tumor classification is stated as stage IA in the pathology report, and based on AJCC7 criteria, pT1 and pN0 correspond to Stage IA.",
+
+    "histologic_diagnosis_stated": "Mixed bronchopulmonary adenocarcinoma",
+    "histologic_diagnosis": "Lung Adenocarcinoma",
+    "histologic_diagnosis_CD": 0.80,
+    "histologic_diagnosis_evidence": "The pathology report mentions 'bronchopulmonary adenocarcinoma', which is consistent with lung adenocarcinoma, but the term 'mixed' might imply a component of another histological type.",
+
+    "comment": "The pathology report provides clear information on tumor classification and staging. However, the mention of 'mixed bronchopulmonary adenocarcinoma' might require further clarification or confirmation through additional investigations."
+}

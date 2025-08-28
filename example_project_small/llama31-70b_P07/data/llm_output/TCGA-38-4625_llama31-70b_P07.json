@@ -1,28 +1,28 @@
 {
-  "tumor_size_max_dimension_stated": "5.0 cm",
-  "tumor_size_max_dimension": "5.0 cm",
-  "tumor_size_max_dimension_CD": "1.00",
-  "tumor_size_max_dimension_evidence": "The tumor size is stated in the pathology report as 5.0 cm in greatest dimension.",
-  
-  "pT_stated": "Unknown",
-  "pT": "T2a",
-  "pT_CD": "0.80",
-  "pT_evidence": "Based on AJCC7 criteria, a tumor size of 5.0 cm corresponds to T2a.",
-  
-  "pN_stated": "No tumor seen in lymph nodes",
-  "pN": "N0",
-  "pN_CD": "1.00",
-  "pN_evidence": "The pathology report states that all lymph nodes are free of tumor, which corresponds to N0.",
-  
-  "tumor_stage_stated": "Unknown",
-  "tumor_stage": "Stage IB",
-  "tumor_stage_CD": "0.80",
-  "tumor_stage_evidence": "Based on AJCC7 criteria, a T2a tumor with no lymph node involvement corresponds to Stage IB.",
-  
-  "histologic_diagnosis_stated": "Poorly differentiated adenocarcinoma",
-  "histologic_diagnosis": "Lung Adenocarcinoma",
-  "histologic_diagnosis_CD": "1.00",
-  "histologic_diagnosis_evidence": "The pathology report states that the tumor is a poorly differentiated adenocarcinoma, which corresponds to Lung Adenocarcinoma.",
-  
-  "comment": "The pathology report describes a poorly differentiated adenocarcinoma with a tumor size of 5.0 cm and no lymph node involvement. The tumor stage is estimated as Stage IB based on AJCC7 criteria."
+    "tumor_size_max_dimension_stated": "5.0 cm",
+    "tumor_size_max_dimension": "5.0 cm",
+    "tumor_size_max_dimension_CD": "1.00",
+    "tumor_size_max_dimension_evidence": "The tumor size is stated in the pathology report as 5.0 cm in greatest dimension.",
+    
+    "pT_stated": "Unknown",
+    "pT": "T2a",
+    "pT_CD": "0.80",
+    "pT_evidence": "Based on AJCC7 criteria, a tumor size of 5.0 cm corresponds to T2a.",
+    
+    "pN_stated": "No tumor seen in lymph nodes",
+    "pN": "N0",
+    "pN_CD": "1.00",
+    "pN_evidence": "The pathology report states that all lymph nodes are free of tumor.",
+    
+    "tumor_stage_stated": "Unknown",
+    "tumor_stage": "Stage IB",
+    "tumor_stage_CD": "0.80",
+    "tumor_stage_evidence": "Based on AJCC7 criteria, a T2a tumor with no lymph node involvement corresponds to Stage IB.",
+    
+    "histologic_diagnosis_stated": "Poorly differentiated adenocarcinoma",
+    "histologic_diagnosis": "Lung Adenocarcinoma",
+    "histologic_diagnosis_CD": "1.00",
+    "histologic_diagnosis_evidence": "The pathology report states that the tumor is a poorly differentiated adenocarcinoma.",
+    
+    "comment": "The tumor is markedly pleomorphic and high grade, with rare mucin positive cells, favoring the interpretation of adenocarcinoma."
 }

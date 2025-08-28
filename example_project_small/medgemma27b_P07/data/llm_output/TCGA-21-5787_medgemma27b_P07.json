@@ -1,0 +1,25 @@
+```json
+{
+  "tumor_size_max_dimension_stated": "4.2 em",
+  "tumor_size_max_dimension": "4.2",
+  "tumor_size_max_dimension_CD": 1.00,
+  "tumor_size_max_dimension_evidence": "Left lingula, resection: - Squamous cell carcinoma, 4.2 em, poorly differentiated.",
+  "pT_stated": "T2",
+  "pT": "T2",
+  "pT_CD": 1.00,
+  "pT_evidence": "The tumor size is 4.2 cm, which is greater than 3 cm but less than or equal to 5 cm according to AJCC 7th edition criteria for T2.",
+  "pN_stated": "N2",
+  "pN": "N2",
+  "pN_CD": 1.00,
+  "pN_evidence": "13 ipsilateral mediastinal and/or subcarinal lymph node(s) with metastatic carcinoma (N2).",
+  "tumor_stage_stated": "Unknown",
+  "tumor_stage": "Stage IIB",
+  "tumor_stage_CD": 1.00,
+  "tumor_stage_evidence": "Based on AJCC 7th edition criteria, pT2 and pN2 corresponds to Stage IIB.",
+  "histologic_diagnosis_stated": "Squamous cell carcinoma",
+  "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "Left lingula, resection: - Squamous cell carcinoma, 4.2 em, poorly differentiated.",
+  "comment": "The patient has a poorly differentiated squamous cell carcinoma of the left lingula measuring 4.2 cm. There is lymphovascular invasion. The tumor does not involve the visceral pleura. The margins are uninvolved except for the vessel margin where carcinoma is present but the vessel wall is not involved. There is metastasis to 13 ipsilateral mediastinal and/or subcarinal lymph nodes (N2). The final pTNM stage is T2 N2 Mx, corresponding to Stage IIB."
+}
+```

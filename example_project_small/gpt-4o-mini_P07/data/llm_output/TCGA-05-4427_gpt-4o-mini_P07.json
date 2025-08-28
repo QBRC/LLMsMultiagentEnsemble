@@ -7,22 +7,22 @@
   "pT_stated": "pT2",
   "pT": "T2",
   "pT_CD": 1.00,
-  "pT_evidence": "The report states pT2, indicating a tumor size greater than 3 cm but less than or equal to 5 cm.",
-
+  "pT_evidence": "The report explicitly states pT2 classification.",
+  
   "pN_stated": "pN1",
   "pN": "N1",
   "pN_CD": 1.00,
-  "pN_evidence": "The report states pN1, indicating metastasis to nearby lymph nodes.",
-
+  "pN_evidence": "The report explicitly states pN1 classification.",
+  
   "tumor_stage_stated": "stage IIB",
   "tumor_stage": "Stage IIB",
   "tumor_stage_CD": 1.00,
-  "tumor_stage_evidence": "Based on pT2 and pN1, the tumor stage is classified as Stage IIB according to AJCC 7th edition criteria.",
-
+  "tumor_stage_evidence": "The report explicitly states the tumor stage as IIB based on pT2 and pN1 classifications.",
+  
   "histologic_diagnosis_stated": "mixed large-cell and polymorphocellular adenocarcinoma",
   "histologic_diagnosis": "Lung Adenocarcinoma",
   "histologic_diagnosis_CD": 1.00,
-  "histologic_diagnosis_evidence": "The report describes the tumor as a mixed-type adenocarcinoma, confirming it as Lung Adenocarcinoma.",
-
-  "comment": "The pathology report indicates a large peripheral to central undifferentiated mixed large-cell and polymorphocellular adenocarcinoma of the left upper lobe, classified as pT2 and pN1, leading to a final stage of IIB. The tumor shows some neuroendocrine differentiation and has invaded the visceral pleura minimally, with central bronchopulmonary and hilar lymph node metastases. Immunohistochemical analysis supports the diagnosis of mixed-type adenocarcinoma."
+  "histologic_diagnosis_evidence": "The report describes the tumor as a mixed-type adenocarcinoma of the lung.",
+  
+  "comment": "The pathology report indicates a large peripheral to central undifferentiated mixed large-cell and polymorphocellular adenocarcinoma of the left upper lobe, classified as pT2 and pN1, resulting in a stage IIB classification. The tumor shows evidence of invasion and lymph node metastases, confirming its aggressive nature. Immunohistochemical analysis supports the diagnosis, indicating a primary lung carcinoma."
 }

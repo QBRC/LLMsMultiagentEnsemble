@@ -1,0 +1,23 @@
+{
+"tumor_size_max_dimension_stated": "Unknown",
+"tumor_size_max_dimension": "Unknown",
+"tumor_size_max_dimension_CD": 0.0,
+"tumor_size_max_dimension_evidence": "The pathology report does not provide the greatest dimension of the tumor.",
+"pT_stated": "pT2",
+"pT": "T2",
+"pT_CD": 1.0,
+"pT_evidence": "The pathology report states pT2, indicating a tumor size greater than 3 cm but not more than 5 cm in greatest dimension.",
+"pN_stated": "pN0",
+"pN": "N0",
+"pN_CD": 1.0,
+"pN_evidence": "The pathology report states pN0, indicating no regional lymph node metastasis.",
+"tumor_stage_stated": "Stage IV",
+"tumor_stage": "Stage IV",
+"tumor_stage_CD": 1.0,
+"tumor_stage_evidence": "Based on the stated pT2 and pN0 categories, but with distant metastasis (pM1), the tumor stage is correctly identified as Stage IV.",
+"histologic_diagnosis_stated": "Peripheral bronchopulmonary, histologically mixed adenocarcinoma",
+"histologic_diagnosis": "Lung Adenocarcinoma",
+"histologic_diagnosis_CD": 1.0,
+"histologic_diagnosis_evidence": "The pathology report describes a peripheral bronchopulmonary, histologically mixed adenocarcinoma with tubular and bronchioalveolar growth components.",
+"comment": "The pathology report details a lung adenocarcinoma with pleural invasion and a secondary focus consistent with metastasis. The tumor is classified as pT2, pN0, but the presence of distant metastasis (pM1) confirms it as Stage IV. Immunohistochemical analysis supports the diagnosis."
+}

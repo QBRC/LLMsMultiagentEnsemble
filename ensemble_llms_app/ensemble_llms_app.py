@@ -38,6 +38,9 @@ class EnsembleLLMsApp:
         Keyword arguments:
         config_yaml_file_path -- the path of the LLM application configuration file in YAML.
         """
+        
+        torch.cuda.empty_cache() 
+        
         with open(config_yaml_file_path, 'r') as f:
             try:
                 self.app_config = yaml.safe_load(f)
@@ -66,12 +69,12 @@ class EnsembleLLMsApp:
                 self.input_data_id_col = self.app_config['input_data_id_column_name']
 
                 # Output data
-                self.var_val_list_path = os.path.join(self.home_path,os.path.realpath(self.app_config['var_val_list_path']))
+                self.var_val_dict_path = os.path.join(self.home_path,os.path.realpath(self.app_config['var_val_dict_path']))
                 try:
-                    with open(self.var_val_list_path, 'r') as f:
-                        self.var_val_list = json.load(f,object_pairs_hook=OrderedDict) # keep original order
+                    with open(self.var_val_dict_path, 'r') as f:
+                        self.var_val_dict = json.load(f,object_pairs_hook=OrderedDict) # keep original order
                 except Exception as e:
-                    print(f"Error: failed to get variable-value list from {self.var_val_list_path}\n{e}")
+                    print(f"Error: failed to get variable-value list from {self.var_val_dict_path}\n{e}")
 
                 self.json_output_template_path = os.path.join(self.home_path,os.path.realpath(self.app_config['json_output_template_path']))
                 try:
@@ -81,7 +84,7 @@ class EnsembleLLMsApp:
                 except Exception as e:
                     print(f"Error: failed to get keys from {self.json_output_template_path}\n{e}")
                 # verify vars in json output template
-                for v in self.var_val_list.keys():
+                for v in self.var_val_dict.keys():
                     if v not in self.json_key_list:
                         print(f"Error: Variable {v} is not specified in the JSON output template.")
                         sys.exit()
@@ -108,8 +111,8 @@ class EnsembleLLMsApp:
                 'dataset_id': self.dataset_id,
                 'input_data_id_column_name': self.input_data_id_col,
                 'input_text_column_name': self.input_text_col,
-                'var_val_list_path': self.var_val_list_path,
-                # 'var_val_list': self.var_val_list,
+                'var_val_dict_path': self.var_val_dict_path,
+                # 'var_val_dict': self.var_val_dict,
                 'json_output_template_path':self.json_output_template_path,
                 'json_key_list': self.json_key_list
             }
@@ -143,8 +146,8 @@ class EnsembleLLMsApp:
             self.predictors = predictors        
                     
 
-    def launch_llm_apps(self):
-        """Set up and use LLM to compute."""
+    def launch(self):
+        """Set up and use each specified LLM agent to compute."""
 
         # Start to count time.
         start_time = time.time()
@@ -168,15 +171,25 @@ class EnsembleLLMsApp:
         print(f"Elapsed time: {elapsed_time/60:2f} minutes ({elapsed_time:2f} seconds).\n")
 
     
-    def aggregate(self):
-        """Aggregate the output csv files from every llm_app."""
+    def aggregate(self, revised_var_list:list=[]):
+        """Aggregate the output csv files from every llm_app.
+
+        Keyword argument:
+        revised_var_list -- the list of variables to be aggregated from each LLM output. Default:[] -- keep original output variables as configured.
+        """
 
         # Read in input data as base data.
         df = pd.read_csv(self.input_data_path)
         
-        # Add keys in json_key_list to the df as columns and initialize to '', 
+        # the list of variables to be aggregated from each LLM output
+        if len(revised_var_list) > 0:
+            var_list = revised_var_list
+        else:
+            var_list = self.json_key_list
+            
+        # Add keys in var_list to the df as columns and initialize to '', 
         # for adding postfix f"_{predictor}" to those cols, when merging each llm app's prediction.
-        for col in self.json_key_list:
+        for col in var_list:
             df[col] = ''
 
         # Read in and merge each llm app's prediction
@@ -187,12 +200,12 @@ class EnsembleLLMsApp:
             df1 = pd.read_csv(os.path.join(app['home_path'], f"data/{app['dataset_id']}_{predictor}.csv"),
                              keep_default_na=False)
             # Select cols to merge to main df.
-            df1 = df1[[self.input_data_id_col] + self.json_key_list]
+            df1 = df1[[self.input_data_id_col] + var_list]
             # merge        
             df = pd.merge(df, df1, on=self.input_data_id_col, how='left', suffixes=('', f"_{predictor}"))
 
         # Drop cols in json_key_list, after merging
-        df.drop(columns=self.json_key_list, inplace=True)
+        df.drop(columns=var_list, inplace=True)
         
         # Save the aggregated file to data folder
         aggregated_file_path = os.path.join(self.data_folder_path, f"{self.dataset_id}_{self.project_name}_aggregated.csv")
@@ -201,7 +214,7 @@ class EnsembleLLMsApp:
         return df
 
     
-    def vote(self,df:pd.DataFrame,var_val_list:str='',min_winning_share:list=[]):
+    def vote(self,df:pd.DataFrame,revised_var_val_dict:dict={},min_winning_votes:dict={}):
         """Vote function:
         For each variable in vars predicted by each of predictors, use maximum vote above threshold method to vote, 
         e.g. 7 voters vote for 3 options, the option with at least 3 votes win (threshold 3/7)
@@ -211,14 +224,24 @@ class EnsembleLLMsApp:
         vars: a list of categorical variables, to be vote for.
         predictors: a set of predictors
         ensemble_name: the name of the LLMs multiagent ensemble
-        min_winning_share: a list of minimal vote rate to win for each variable; default: empty, use natural minimal for each var.
+        min_winning_votes: a list of minimal vote rate to win for each variable; default: empty, use natural minimal for each var.
+
+        Keyword arguments:
+        revised_var_val_dict -- the dictionary of vars and their values where the value of each var will be voted by predictors. Default:{} -- keep original var_val dic as configured.
+ 
         """
         
         print(f"Voting by predictors: {self.predictors}")
+
+        # create the list of var-value to be voted by predictors
+        if revised_var_val_dict=={}:
+            var_val_dict = self.var_val_dict
+        else:
+            var_val_dict = revised_var_val_dict
         
         # Vote for each variable
-        for var in self.var_val_list.keys():
-            vals = self.var_val_list[f'{var}']
+        for var in var_val_dict.keys():
+            vals = var_val_dict[f'{var}']
             if len(vals) <= 1:
                 print(f"Warning: Variable {var} does not have a list of categorical values; skipped!!\nCurrent value: {vals}.")
             else:
@@ -238,12 +261,17 @@ class EnsembleLLMsApp:
                 df[f"votes_{var}_non-standard"] = (~df[cols_to_check].isin(vals)).sum(axis=1)
                 # Handle empty value (LLM failed to respond)
                 df[f'votes_{var}_no_response'] = 0 # initialize as 0
-                df[f"votes_{var}_non_response"] = (df[cols_to_check] == '').sum(axis=1)
+                df[f"votes_{var}_no_response"] = (df[cols_to_check] == '').sum(axis=1)
 
                 # Infer var's value with max votes
                 df[f'{var}_voted'] = '' # initialize the col <var> for the voted value
+                # get minimum threshold
+                if min_winning_votes=={}:
+                    threshold = 2
+                else:
+                    threshold = min_winning_votes[var]
                 # for each row in df, infer a value
-                df[f'{var}_voted'] = df[votes_cols].apply(lambda row: self.infer_value_with_vote(row,vals),axis=1)
+                df[f'{var}_voted'] = df[votes_cols].apply(lambda row: self.infer_value_with_vote(row,vals,threshold),axis=1)
         
         vote_result_file_path = os.path.join(self.data_folder_path, f"{self.dataset_id}_{self.project_name}_voted.csv")        
         # vote_result_file_path = os.path.join(self.data_folder_path, f"{self.project_name}_voted.csv")
@@ -253,25 +281,22 @@ class EnsembleLLMsApp:
         return df
         
 
-    def infer_value_with_vote(self,row:pd.Series,vals:list,min_winning_share:float=None,min_num_votes:int=2):
+    def infer_value_with_vote(self,row:pd.Series,vals:list,min_winning_votes:int=2):
         
         total_votes = row.sum()
             
-        if total_votes < min_num_votes: # if total number of valid votes less than min_num_votes, "Review"
+        if total_votes < min_winning_votes: # if total number of valid votes less than min_num_votes, "Review"
             return "Review"
         else:
-            votes_share_list = [v/total_votes for v in row]
-            max_share = max(votes_share_list)
-
-            if min_winning_share is None: # if no minimum winning share is specified, use simple majority
-                min_winning_share = (math.floor(total_votes/2)+1)/total_votes
+            votes = list(row)
+            max_vote = max(votes)
             
-            if max_share < min_winning_share:
+            if max_vote < min_winning_votes:
                 return "Review"
-            elif votes_share_list.count(max_share) > 1: # Tie: multiple candidates ties in the max votes share.
+            elif votes.count(max_vote) > 1: # Tie: multiple candidates ties in the max votes share.
                 return "Review"
             else: # greater than wining threshold and no tie, return the wining value.
-                return vals[votes_share_list.index(max_share)]
+                return vals[votes.index(max_vote)]
                 
     def apply_Postprocessing(self, function: Postprocessing) -> pd.DataFrame:
         """
@@ -306,17 +331,23 @@ def run(command:str='',**kwargs) -> EnsembleLLMsApp:
     if command=='launch':
         ensemble.launch_llm_apps()
     elif command=='aggregate':
-        ensemble.aggregate()
+        if 'revised_var_list' in kwargs:
+            revised_var_list = list(kwargs['revised_var_list'])
+            ensemble.aggregate(revised_var_list=revised_var_list)
+        else:
+            ensemble.aggregate()
     elif command=='vote':
         df = pd.read_csv(os.path.join(ensemble.data_folder_path, f"{ensemble.dataset_id}_{ensemble.project_name}_aggregated.csv"), 
                          keep_default_na=False)
-        if 'var_val_list' in kwargs:
-            ensemble.var_val_list = json.loads(kwargs['var_val_list'])
+        if 'revised_var_val_dict' in kwargs:
+            var_val_dict = json.loads(kwargs['revised_var_val_dict'])
             print()
-            print(kwargs['var_val_list'])
-            print(ensemble.var_val_list)
+            print(kwargs['revised_var_val_dict'])
+            print(var_val_dict)
             print()
-        ensemble.vote(df=df)
+            ensemble.vote(df=df,revised_var_val_dict=var_val_dict)
+        else:
+            ensemble.vote(df=df)
     elif command=='evaluate':
         ensemble.evaluate()
     elif command=='' or command=='all':

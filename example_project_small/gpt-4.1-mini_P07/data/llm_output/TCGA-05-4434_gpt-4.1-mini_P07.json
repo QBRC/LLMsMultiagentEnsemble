@@ -17,12 +17,12 @@
   "tumor_stage_stated": "stage IV",
   "tumor_stage": "Stage IV",
   "tumor_stage_CD": 1.00,
-  "tumor_stage_evidence": "The report states 'stage IV' and indicates pM1 (P/E) with pleural dissemination and carcinoma cells in pleural effusions, consistent with distant metastasis and stage IV by AJCC7.",
+  "tumor_stage_evidence": "The report states 'stage IV' and mentions pM1 (P/E) indicating distant metastasis (pleural effusions with carcinoma cells), consistent with Stage IV by AJCC7 criteria.",
   
-  "histologic_diagnosis_stated": "histologically mixed adenocarcinoma",
+  "histologic_diagnosis_stated": "mixed adenocarcinoma of the right lower lobe of the lung",
   "histologic_diagnosis": "Lung Adenocarcinoma",
   "histologic_diagnosis_CD": 1.00,
-  "histologic_diagnosis_evidence": "The diagnosis states 'histologically mixed adenocarcinoma' with immunohistochemical confirmation of adenocarcinoma of the lung.",
+  "histologic_diagnosis_evidence": "The diagnosis states 'histologically mixed adenocarcinoma' and immunohistochemical analysis confirms adenocarcinoma of the lung with glandular differentiation and TTF1 positivity.",
   
-  "comment": "The pathology report describes an extensive, locoregionally advanced lung tumor in the right lower lobe with pleural invasion and metastatic dissemination to pleura and lymph nodes. The tumor is classified as pT4 due to pleural invasion and extensive spread, pN1 due to lymph node metastases, and pM1 due to pleural effusion involvement, resulting in stage IV disease per AJCC7 criteria. Histology and immunohistochemistry confirm a mixed adenocarcinoma of lung origin. Tumor size is not specified. The RX status indicates possible residual tumor cells in pleural effusions. Immunohistochemical analysis supports the diagnosis and excludes squamous differentiation and metastatic breast carcinoma. Overall, the report provides comprehensive staging and diagnosis but lacks explicit tumor size measurement."
+  "comment": "The pathology report describes an extensive, locoregionally advanced lung tumor in the right lower lobe with pleural invasion and lymph node metastases. The tumor is histologically a mixed adenocarcinoma confirmed by immunohistochemistry. The tumor is classified as pT4 due to pleural invasion and extensive spread, pN1 due to regional lymph node involvement, and pM1 due to malignant pleural effusions, resulting in an overall Stage IV classification per AJCC 7th edition. Tumor size is not provided. The report also notes the absence of squamous differentiation and confirms bronchopulmonary origin. The RX resection status indicates possible residual tumor cells in pleural effusions. Overall, the report is comprehensive and consistent, but the lack of tumor size measurement limits complete staging detail."
 }

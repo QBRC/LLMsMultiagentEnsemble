@@ -7,22 +7,22 @@
   "pT_stated": "pT2",
   "pT": "T2",
   "pT_CD": 1.00,
-  "pT_evidence": "The report classifies the primary tumor as pT2.",
+  "pT_evidence": "The report explicitly states pT2 classification.",
   
   "pN_stated": "pN0",
   "pN": "N0",
   "pN_CD": 1.00,
-  "pN_evidence": "The report indicates pN0, meaning no regional lymph node involvement.",
+  "pN_evidence": "The report explicitly states pN0 classification.",
   
   "tumor_stage_stated": "Stage IV",
   "tumor_stage": "Stage IV",
   "tumor_stage_CD": 1.00,
-  "tumor_stage_evidence": "The report classifies the tumor stage as IV based on pT2, pN0, and the presence of distant metastasis (pM1).",
+  "tumor_stage_evidence": "The report explicitly states the tumor stage as Stage IV based on pT2, pN0, and pM1 classification.",
   
-  "histologic_diagnosis_stated": "Peripheral bronchopulmonary, histologically mixed adenocarcinoma",
+  "histologic_diagnosis_stated": "mixed adenocarcinoma",
   "histologic_diagnosis": "Lung Adenocarcinoma",
   "histologic_diagnosis_CD": 1.00,
-  "histologic_diagnosis_evidence": "The report confirms the diagnosis as adenocarcinoma of the lung.",
+  "histologic_diagnosis_evidence": "The report classifies the tumor as adenocarcinoma of the lung, confirming the histologic diagnosis.",
   
-  "comment": "The pathology report indicates a mixed adenocarcinoma of the lung with pleural invasion and a small metastatic focus. The tumor is classified as pT2, pN0, and pM1, leading to a final stage IV diagnosis. The presence of vascular invasion and the characteristics of the tumor suggest aggressive behavior. Immunohistochemical analysis supports the diagnosis of lung adenocarcinoma."
+  "comment": "The pathology report indicates a mixed adenocarcinoma of the lung with pleural invasion and a small metastatic focus. The tumor is classified as pT2, pN0, and pM1, leading to a final stage of IV. The report highlights the need for immunohistochemical confirmation of the tumor type, but the findings strongly support the diagnosis of lung adenocarcinoma."
 }

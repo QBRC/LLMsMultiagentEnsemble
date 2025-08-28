@@ -1,0 +1,23 @@
+{
+  "tumor_size_max_dimension_stated": "4.0 cm",
+  "tumor_size_max_dimension": "4.0",
+  "tumor_size_max_dimension_CD": 1.0,
+  "tumor_size_max_dimension_evidence": "Invasive moderately-differentiated squamous cell carcinoma, peripheral but with no invasion into overlying visceral pleura, 4.0 em maximum dimension.",
+  "pT_stated": "T2",
+  "pT": "T2",
+  "pT_CD": 1.0,
+  "pT_evidence": "Examination of this material indicates apparent complete resection of a T2NO squamous cell carcinoma.",
+  "pN_stated": "N0",
+  "pN": "N0",
+  "pN_CD": 1.0,
+  "pN_evidence": "Lobar lymph nodes (2 examined) - Negative for malignancy.",
+  "tumor_stage_stated": "Stage IB",
+  "tumor_stage": "Stage IB",
+  "tumor_stage_CD": 1.0,
+  "tumor_stage_evidence": "Based on AJCC7 criteria, pT T2 and pN N0 corresponds to Stage IB.",
+  "histologic_diagnosis_stated": "Lung Squamous Cell Carcinoma",
+  "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
+  "histologic_diagnosis_CD": 1.0,
+  "histologic_diagnosis_evidence": "Invasive moderately-differentiated squamous cell carcinoma.",
+  "comment": "The pathology report indicates a complete resection of an invasive, moderately differentiated squamous cell carcinoma in the left upper lobe with no evidence of malignancy in the examined lymph nodes or bronchial margin. The tumor size is reported as 4.0 cm maximum dimension."
+}

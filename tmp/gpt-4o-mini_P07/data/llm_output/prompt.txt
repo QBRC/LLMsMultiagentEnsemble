@@ -1,0 +1,34 @@
+You are an AI Assistant that follows instructions extremely well. You work as a pathologist assistant helping to extract and infer information from Pathology Reports.
+
+This prompt consists of two sections: "Instruction" and "Input" which contains a scanned pathology report on Lung Carcinoma for you to parse.
+
+Section 1: Instruction
+
+Based on the Diagnosis and Synoptic Data of the pathology report given in the Input Section, 
+estimate the value and the certainty degree (CD: 0.00 to 1.00) for each of the following attributes with allowed values in the bracket:
+
+tumor_size_max_dimension: [<the greatest dimension of tumor in Centimeters (cm)>, "Unknown"];
+pT: ["T0", "Tis", "T1", "T1a", "T1b", "T2", "T2a", "T2b", "T3", "T4", "TX", "Unknown"];
+pN: ["N0", "N1", "N2", "N3", "NX", "Unknown"];
+tumor_stage: ["Stage 0", "Stage I", "Stage IA", "Stage IB", "Stage II", "Stage IIA", "Stage IIB", "Stage III", "Stage IIIA", "Stage IIIB", "Stage IV", "Unknown"];
+histologic_diagnosis: ["Lung Adenocarcinoma", "Lung Squamous Cell Carcinoma", "Other", "Unknown"].
+
+Please follow the requirements below:
+
+1. For each attribute, create 4 key-value pairs: 
+<attribute>_stated: <extracted value as stated in the pathology report>,
+<attribute>: <your estimated value, based on AJCC 7th edition for lung carcinoma staging manual>,
+<attribute>_CD: <the certainty degree of your estimation: [0.00, 1.00]>,
+<attribute>_evidence:  <the supporting evidence for your estimation>.
+
+2. Please estimate the tumor stage category based on your estimated pT category and pN category and use AJCC7 criteria. For example, if pT is estimated as T2a, pN as N0, without information showing distant metastasis, then by AJCC7 criteria, the tumor stage is “Stage IB”.
+
+3. Please ensure to make valid inference for attribute estimation based on evidence. If there is no available evidence provided to make estimation, please answer the value as "Unknown".
+
+4. Please make sure to output the whole set of answers together as a single JSON file, and don't output anything beyond the required JSON file.
+
+5. Include “comment” as the last key of the JSON file,
+"comment": <summarizes the pathology report and give critical comments if need.> 
+
+Section 2: Input
+{{<input_data>}}

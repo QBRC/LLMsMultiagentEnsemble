@@ -7,22 +7,22 @@
   "pT_stated": "T2",
   "pT": "T2a",
   "pT_CD": 0.95,
-  "pT_evidence": "Tumor size is 4.2 cm, which is >3.0 cm but ≤5 cm, and visceral pleura is not involved. According to AJCC 7th edition, tumor >3 cm and ≤5 cm without visceral pleura invasion is T2a.",
+  "pT_evidence": "Tumor size is 4.2 cm and visceral pleura is not involved. According to AJCC 7th edition, tumor >3 cm but ≤5 cm without visceral pleura invasion is T2a.",
   
   "pN_stated": "N2",
   "pN": "N2",
   "pN_CD": 1.00,
-  "pN_evidence": "13 ipsilateral mediastinal and/or subcarinal lymph nodes with metastatic carcinoma (N2) as stated in the Lung Template and Final Diagnosis.",
+  "pN_evidence": "Multiple ipsilateral mediastinal and/or subcarinal lymph nodes (levels 5, 6, 7, 3, 4) show metastatic carcinoma; 13 nodes positive consistent with N2 category.",
   
   "tumor_stage_stated": "Stage IIIA",
   "tumor_stage": "Stage IIIA",
   "tumor_stage_CD": 0.95,
-  "tumor_stage_evidence": "Based on AJCC 7th edition, T2a combined with N2 corresponds to Stage IIIA lung cancer. No distant metastasis (Mx) reported.",
+  "tumor_stage_evidence": "AJCC 7th edition staging: T2a N2 Mx corresponds to Stage IIIA lung cancer.",
   
   "histologic_diagnosis_stated": "Squamous cell carcinoma",
   "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
   "histologic_diagnosis_CD": 1.00,
-  "histologic_diagnosis_evidence": "Final Diagnosis states squamous cell carcinoma, poorly differentiated, in left lingula lung specimen.",
+  "histologic_diagnosis_evidence": "Final Diagnosis states poorly differentiated squamous cell carcinoma in left lingula lung specimen.",
   
-  "comment": "The pathology report describes a poorly differentiated squamous cell carcinoma of the left lingula measuring 4.2 cm with lymphovascular invasion but no visceral pleura involvement. Multiple regional lymph nodes, including ipsilateral mediastinal and subcarinal nodes, show metastatic carcinoma consistent with N2 disease. The rib specimen shows no tumor. Margins are uninvolved. The tumor is staged as T2a N2 Mx, corresponding to Stage IIIA lung squamous cell carcinoma per AJCC 7th edition. The report is comprehensive and provides sufficient data for accurate staging. No distant metastasis evaluation is provided (Mx). The presence of lymphovascular invasion and multiple positive lymph nodes indicates aggressive disease. Further clinical correlation and imaging are needed to assess distant metastasis."
+  "comment": "The pathology report describes a poorly differentiated squamous cell carcinoma of the left lingula measuring 4.2 cm with lymphovascular invasion but no visceral pleura involvement. Multiple ipsilateral mediastinal and hilar lymph nodes are positive for metastatic carcinoma, consistent with N2 disease. The rib specimen shows no tumor involvement. Margins are uninvolved by invasive carcinoma. Based on AJCC 7th edition criteria, the tumor is staged as T2a N2 Mx, corresponding to Stage IIIA. The report is comprehensive with detailed lymph node assessment and margin evaluation. No distant metastasis information is provided (Mx). The tumor size and nodal status are well documented, supporting a confident staging. The presence of lymphovascular invasion and multiple positive lymph nodes indicates aggressive disease requiring multidisciplinary management."
 }

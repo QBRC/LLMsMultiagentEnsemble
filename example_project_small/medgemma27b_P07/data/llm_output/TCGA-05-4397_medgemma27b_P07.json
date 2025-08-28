@@ -1,0 +1,25 @@
+```json
+{
+  "tumor_size_max_dimension_stated": "Unknown",
+  "tumor_size_max_dimension": "Unknown",
+  "tumor_size_max_dimension_CD": 0.00,
+  "tumor_size_max_dimension_evidence": "The pathology report does not provide the maximum dimension of the tumor.",
+  "pT_stated": "T2",
+  "pT": "T2",
+  "pT_CD": 1.00,
+  "pT_evidence": "The pathology report explicitly states 'pT2'.",
+  "pN_stated": "N1",
+  "pN": "N1",
+  "pN_CD": 1.00,
+  "pN_evidence": "The pathology report explicitly states 'pN1'.",
+  "tumor_stage_stated": "IIB",
+  "tumor_stage": "Stage IIB",
+  "tumor_stage_CD": 1.00,
+  "tumor_stage_evidence": "The pathology report explicitly states 'stage IIB'.",
+  "histologic_diagnosis_stated": "adenocarcinoma",
+  "histologic_diagnosis": "Lung Adenocarcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "The pathology report explicitly states 'bronchopulmonary adenocarcinoma'.",
+  "comment": "The pathology report describes a centrally located, mixed differentiation adenocarcinoma (G3) with invasion of large pulmonary vessels and pleura. The tumor is classified as pT2 pN1 V2 RX, Stage IIB. The unusual invasion of large pulmonary vessels with lumen-obstructing thrombi extending beyond the resection margin is noted, along with minimal pleural adhesion (0.5 mm) at the resection margin. The lymph node involvement is in the hilar region."
+}
+```

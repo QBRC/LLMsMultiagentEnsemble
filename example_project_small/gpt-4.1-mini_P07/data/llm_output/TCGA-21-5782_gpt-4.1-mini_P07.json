@@ -7,7 +7,7 @@
   "pT_stated": "Not explicitly stated; inferred from tumor size and margins",
   "pT": "T2a",
   "pT_CD": 0.90,
-  "pT_evidence": "Tumor size is 3.5 cm which falls into T2a category (3-5 cm) per AJCC 7th edition; margins and pleura are negative, no invasion beyond lung parenchyma noted.",
+  "pT_evidence": "Tumor size is 3.5 cm which fits T2a category (3-5 cm). Negative pleura and inked resection margin indicate no invasion beyond lung parenchyma or pleura.",
   
   "pN_stated": "N0 (0/1 lymph nodes positive)",
   "pN": "N0",
@@ -17,12 +17,12 @@
   "tumor_stage_stated": "Not explicitly stated",
   "tumor_stage": "Stage IB",
   "tumor_stage_CD": 0.90,
-  "tumor_stage_evidence": "Based on pT2a and pN0 without evidence of distant metastasis, AJCC 7th edition staging corresponds to Stage IB.",
+  "tumor_stage_evidence": "Based on AJCC 7th edition, T2a N0 corresponds to Stage IB for lung carcinoma without distant metastasis.",
   
   "histologic_diagnosis_stated": "Invasive, poorly differentiated, squamous cell carcinoma",
   "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
   "histologic_diagnosis_CD": 1.00,
-  "histologic_diagnosis_evidence": "Final diagnosis states invasive, poorly differentiated squamous cell carcinoma of the lung.",
+  "histologic_diagnosis_evidence": "Final diagnosis states invasive, poorly differentiated squamous cell carcinoma in lung wedge biopsy.",
   
-  "comment": "The pathology report describes a 3.5 cm invasive, poorly differentiated squamous cell carcinoma in the left lower lobe wedge biopsy with negative pleural and resection margins. One sampled lymph node (level 9L) is negative for metastasis. The tumor is staged as pT2a N0, corresponding to Stage IB by AJCC 7th edition criteria. The report is comprehensive with clear gross and microscopic findings. No evidence of nodal or distant metastasis is noted. The diagnosis and staging appear reliable with high certainty."
+  "comment": "The pathology report describes a 3.5 cm invasive, poorly differentiated squamous cell carcinoma in the left lower lobe wedge biopsy with negative pleural and resection margins. One sampled lymph node (level 9L) is negative for metastasis. The tumor is staged as T2a N0, corresponding to Stage IB by AJCC 7th edition criteria. The report is comprehensive with clear tumor size and lymph node status, allowing confident staging. No evidence of distant metastasis is provided. The diagnosis is consistent with lung squamous cell carcinoma. No critical issues noted."
 }

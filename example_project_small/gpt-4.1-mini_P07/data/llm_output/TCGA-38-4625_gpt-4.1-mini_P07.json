@@ -4,25 +4,25 @@
   "tumor_size_max_dimension_CD": 1.00,
   "tumor_size_max_dimension_evidence": "Tumor size stated as 5.0 cm in greatest dimension in multiple sections of the report.",
 
-  "pT_stated": "T2 (inferred from tumor size 5.0 cm, pleura abutting but no invasion, no bronchus involvement)",
+  "pT_stated": "Not explicitly stated; tumor size 5.0 cm, peripheral location, no pleural invasion, no bronchus involvement",
   "pT": "T2a",
   "pT_CD": 0.95,
-  "pT_evidence": "Tumor size is 5.0 cm which falls into T2 category (3-5 cm). Tumor abuts pleura but does not invade it, no bronchus involvement. According to AJCC 7th edition, tumor >3 cm and ≤5 cm without pleural invasion is T2a.",
+  "pT_evidence": "Tumor size 5.0 cm corresponds to T2a (3-5 cm) per AJCC 7th edition; no pleural invasion or bronchus involvement noted, margins free of tumor.",
 
-  "pN_stated": "N0",
+  "pN_stated": "No tumor seen in all examined lymph nodes (stations 7, 11, R4, hilar nodes)",
   "pN": "N0",
   "pN_CD": 1.00,
-  "pN_evidence": "No tumor seen in all examined lymph nodes including hilar and stations 7, 11, and R4 lymph nodes (0/4 positive).",
+  "pN_evidence": "All lymph nodes examined (hilar, station 7, 11, R4) are negative for tumor.",
 
   "tumor_stage_stated": "Not explicitly stated",
   "tumor_stage": "Stage IB",
   "tumor_stage_CD": 0.95,
-  "tumor_stage_evidence": "Based on AJCC 7th edition, T2a N0 M0 corresponds to Stage IB. No distant metastasis mentioned.",
+  "tumor_stage_evidence": "Based on AJCC 7th edition, T2a N0 corresponds to Stage IB; no evidence of distant metastasis.",
 
   "histologic_diagnosis_stated": "Poorly differentiated adenocarcinoma",
   "histologic_diagnosis": "Lung Adenocarcinoma",
   "histologic_diagnosis_CD": 1.00,
   "histologic_diagnosis_evidence": "Diagnosis clearly stated as poorly differentiated adenocarcinoma in the right upper lobe lung lobectomy specimen.",
 
-  "comment": "The pathology report describes a poorly differentiated lung adenocarcinoma measuring 5.0 cm in greatest dimension located in the right upper lobe. The tumor is peripheral, abutting but not invading the pleura, and is 3.0 cm from the closest bronchial margin without bronchus involvement. Surgical margins are free of tumor. All examined lymph nodes (stations 7, 11, R4, and hilar) are negative for metastasis. No angiolymphatic or perineural invasion is identified. The tumor is high grade and markedly pleomorphic. Based on tumor size and absence of nodal involvement, the tumor is staged as T2a N0, corresponding to Stage IB by AJCC 7th edition criteria. The report is comprehensive and provides sufficient data for accurate staging. No evidence of pleural invasion or distant metastasis is noted. The absence of lymph node metastasis is well documented. Overall, the report supports a diagnosis of Stage IB lung adenocarcinoma with clear margins and no nodal spread."
+  "comment": "The pathology report describes a poorly differentiated lung adenocarcinoma measuring 5.0 cm in greatest dimension located in the right upper lobe. The tumor is peripheral, circumscribed, and abutting but not invading the pleura. Surgical margins are free of tumor. No lymph node metastases were identified in multiple sampled stations (hilar, 7, 11, R4). There is no evidence of angiolymphatic or perineural invasion. Based on tumor size and nodal status, the tumor is staged as T2a N0, corresponding to Stage IB by AJCC 7th edition criteria. The report is comprehensive and provides sufficient data for accurate staging. No distant metastasis information is provided, so M category and overall stage IV cannot be assessed. Overall, the report supports a diagnosis of Stage IB lung adenocarcinoma with negative margins and lymph nodes."
 }

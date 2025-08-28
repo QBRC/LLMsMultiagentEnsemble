@@ -1,0 +1,28 @@
+{
+  "tumor_size_max_dimension_stated": "Unknown",
+  "tumor_size_max_dimension": "Unknown",
+  "tumor_size_max_dimension_CD": 0.00,
+  "tumor_size_max_dimension_evidence": "No information provided on the maximum dimension of the tumor.",
+
+  "pT_stated": "pT1",
+  "pT": "T1",
+  "pT_CD": 1.00,
+  "pT_evidence": "The pathology report states that the tumor classification is pT1.",
+
+  "pN_stated": "pN0",
+  "pN": "N0",
+  "pN_CD": 1.00,
+  "pN_evidence": "The pathology report states that the tumor classification is pN0.",
+
+  "tumor_stage_stated": "Stage IA",
+  "tumor_stage": "Stage IA",
+  "tumor_stage_CD": 1.00,
+  "tumor_stage_evidence": "The pathology report states that the tumor classification is Stage IA.",
+
+  "histologic_diagnosis_stated": "Mixed bronchopulmonary adenocarcinoma",
+  "histologic_diagnosis": "Lung Adenocarcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "The pathology report states that the tumor is a mixed bronchopulmonary adenocarcinoma, which is a type of lung adenocarcinoma.",
+
+  "comment": "The pathology report indicates a mixed bronchopulmonary adenocarcinoma, which is consistent with a bronchopulmonary origin. The tumor has been completely removed, and there is no evidence of tumor in the visceral pleura, right upper lobe, or lymph nodes. The tumor stage is classified as Stage IA based on the provided information."
+}

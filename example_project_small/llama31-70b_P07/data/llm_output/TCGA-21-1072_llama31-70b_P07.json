@@ -5,24 +5,24 @@
     "tumor_size_max_dimension_evidence": "The mass measures 2.4 x 2.5 em in greatest dimension.",
 
     "pT_stated": "PT2",
-    "pT": "T2a",
-    "pT_CD": "0.80",
-    "pT_evidence": "The tumor is described as a pink-tan soft mass which obliterates the bronchiole, and the surrounding vasculature is not involved with the tumor.",
+    "pT": "T2",
+    "pT_CD": "1.00",
+    "pT_evidence": "LEFT LUNG (PNEUMONECTOMY): - KERATINIZING SQUAMOUS CELL CARCINOMA GRADE II (2.5 CM). - PLEURA, BRONCHIAL AND VASCULAR MARGINS NEGATIVE FOR TUMOR.",
 
     "pN_stated": "PN0",
     "pN": "N0",
     "pN_CD": "1.00",
-    "pN_evidence": "Negative peribronchial lymph nodes (0/9).",
+    "pN_evidence": "NEGATIVE PERIBRONCHIAL LYMPH NODES (0/9) (PT2NO).",
 
     "tumor_stage_stated": "Unknown",
     "tumor_stage": "Stage IB",
-    "tumor_stage_CD": "0.80",
-    "tumor_stage_evidence": "Based on the estimated pT category (T2a) and pN category (N0), using AJCC7 criteria.",
+    "tumor_stage_CD": "1.00",
+    "tumor_stage_evidence": "Based on pT and pN categories, according to AJCC7 criteria.",
 
     "histologic_diagnosis_stated": "Keratinizing Squamous Cell Carcinoma Grade II",
     "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
     "histologic_diagnosis_CD": "1.00",
-    "histologic_diagnosis_evidence": "The tumor is described as a Keratinizing Squamous Cell Carcinoma Grade II.",
+    "histologic_diagnosis_evidence": "LEFT LUNG (PNEUMONECTOMY): - KERATINIZING SQUAMOUS CELL CARCINOMA GRADE II (2.5 CM).",
 
-    "comment": "The pathology report describes a left pneumonectomy with a tumor measuring 2.4 x 2.5 cm in greatest dimension, involving the left main bronchus. The tumor is classified as a Keratinizing Squamous Cell Carcinoma Grade II. The pleura, bronchial and vascular margins are negative for tumor. There are no lymph nodes involved (0/9). Based on these findings, the estimated pT category is T2a, pN category is N0, and the tumor stage is Stage IB."
+    "comment": "The pathology report describes a left pneumonectomy with a keratinizing squamous cell carcinoma grade II, measuring 2.4 x 2.5 cm in greatest dimension. The tumor is located in the left main bronchus and has not invaded the pleura, bronchial, or vascular margins. Nine peribronchial lymph nodes are negative for tumor. The tumor stage is estimated to be Stage IB according to AJCC7 criteria."
 }

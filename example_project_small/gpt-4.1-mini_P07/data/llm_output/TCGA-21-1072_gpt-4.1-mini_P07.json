@@ -2,27 +2,27 @@
   "tumor_size_max_dimension_stated": "2.5 cm",
   "tumor_size_max_dimension": 2.5,
   "tumor_size_max_dimension_CD": 1.00,
-  "tumor_size_max_dimension_evidence": "Final Diagnosis states keratinizing squamous cell carcinoma grade II measuring 2.5 cm in left lung pneumonectomy specimen.",
+  "tumor_size_max_dimension_evidence": "Final Diagnosis states keratinizing squamous cell carcinoma measuring 2.5 cm in greatest dimension in the left lung pneumonectomy specimen.",
   
   "pT_stated": "PT2",
   "pT": "T2a",
-  "pT_CD": 0.90,
-  "pT_evidence": "Tumor size is 2.5 cm (which fits T1c if ≤3 cm but involvement of left main bronchus is noted; involvement of main bronchus without involvement of carina and tumor size ≤5 cm is classified as T2a according to AJCC7.",
-
+  "pT_CD": 0.85,
+  "pT_evidence": "Tumor size is 2.5 cm which falls into T2a category (tumor >3 cm but ≤5 cm or tumor with involvement of main bronchus ≥2 cm distal to carina). The report states involvement of the left main bronchus and tumor size 2.5 cm. According to AJCC7, tumor >3 cm but ≤5 cm is T2a; involvement of main bronchus ≥2 cm distal to carina also qualifies as T2. Since size is 2.5 cm (less than 3 cm), size alone suggests T1b, but involvement of main bronchus qualifies for T2. Given the size is close to 3 cm and involvement of main bronchus, T2a is estimated.",
+  
   "pN_stated": "N0",
   "pN": "N0",
   "pN_CD": 1.00,
-  "pN_evidence": "All lymph nodes examined (0/9 peribronchial and other nodes) are negative for tumor.",
-
-  "tumor_stage_stated": "Stage IIA",
-  "tumor_stage": "Stage IIA",
+  "pN_evidence": "All examined lymph nodes (levels 5, 7, 9, inferior pulmonary vein nodes) are negative for tumor (0/9 nodes positive).",
+  
+  "tumor_stage_stated": "Stage IIB",
+  "tumor_stage": "Stage IIB",
   "tumor_stage_CD": 0.90,
-  "tumor_stage_evidence": "Based on pT2a and pN0 without distant metastasis, AJCC7 staging corresponds to Stage IIA.",
-
+  "tumor_stage_evidence": "Based on AJCC7, T2a N0 corresponds to Stage IB; however, the report states (PT2N0) and involvement of left main bronchus. According to AJCC7, involvement of main bronchus (≥2 cm distal to carina) with tumor size 2.5 cm is T2a. T2a N0 is Stage IB. The report states PT2N0 but calls it Stage IIB, which may be a discrepancy. Given no nodal involvement and tumor size, Stage IB is more accurate. However, the report's mention of Stage IIB may reflect additional clinical factors not stated. Estimating Stage IB with high confidence.",
+  
   "histologic_diagnosis_stated": "Keratinizing Squamous Cell Carcinoma Grade II",
   "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
   "histologic_diagnosis_CD": 1.00,
-  "histologic_diagnosis_evidence": "Final diagnosis states keratinizing squamous cell carcinoma grade II in left lung specimen.",
-
-  "comment": "The pathology report describes a 2.5 cm keratinizing squamous cell carcinoma in the left lung pneumonectomy specimen with involvement of the left main bronchus but negative margins and no lymph node metastasis (0/9 nodes). The tumor is staged as pT2a N0, corresponding to Stage IIA by AJCC 7th edition criteria. No tumor was identified in the rib specimen or lymph nodes sampled from levels 5, 7, and 9. The bronchial margin is negative. The report is comprehensive and provides sufficient information for accurate staging. The only minor uncertainty is the exact bronchial involvement extent, but the stated PT2 supports T2a classification. Overall, the diagnosis and staging are well supported."
+  "histologic_diagnosis_evidence": "Final diagnosis clearly states keratinizing squamous cell carcinoma grade II in the left lung specimen.",
+  
+  "comment": "The pathology report describes a 2.5 cm keratinizing squamous cell carcinoma in the left lung pneumonectomy specimen with involvement of the left main bronchus. Margins including pleura, bronchial, and vascular are negative. No tumor was identified in multiple lymph nodes sampled (levels 5, 7, 9, inferior pulmonary vein). The tumor size and bronchial involvement support a T2a classification. Nodal status is N0. According to AJCC 7th edition, this corresponds to Stage IB. The report mentions PT2N0 and Stage IIB, which may reflect clinical staging or additional factors not detailed here. Overall, the tumor is localized without nodal metastasis. No tumor was seen in the portion of 6th rib. The diagnosis is lung squamous cell carcinoma, grade II. The report is comprehensive; however, clarification on staging discrepancy (Stage IIB vs. Stage IB) would be beneficial."
 }

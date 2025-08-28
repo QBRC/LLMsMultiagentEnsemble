@@ -2,7 +2,7 @@
   "tumor_size_max_dimension_stated": "Unknown",
   "tumor_size_max_dimension": "Unknown",
   "tumor_size_max_dimension_CD": 0.00,
-  "tumor_size_max_dimension_evidence": "The report does not provide specific measurements for the maximum dimension of the tumor.",
+  "tumor_size_max_dimension_evidence": "No specific measurement of tumor size is provided in the report.",
   
   "pT_stated": "pT2",
   "pT": "T2",
@@ -19,10 +19,10 @@
   "tumor_stage_CD": 1.00,
   "tumor_stage_evidence": "The report explicitly states the tumor stage as IIB.",
   
-  "histologic_diagnosis_stated": "Unknown",
+  "histologic_diagnosis_stated": "Adenocarcinoma",
   "histologic_diagnosis": "Lung Adenocarcinoma",
-  "histologic_diagnosis_CD": 0.90,
-  "histologic_diagnosis_evidence": "The report describes extensive bronchopulmonary adenocarcinoma, which aligns with lung adenocarcinoma, although it mentions mixed differentiation.",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "The report describes the tumor as bronchopulmonary adenocarcinoma.",
   
-  "comment": "The pathology report indicates a pT2, pN1 classification with a tumor stage of IIB. The tumor exhibits significant features such as invasion of large pulmonary vessels and pleura, which are critical for understanding the aggressiveness of the carcinoma. The histologic diagnosis suggests lung adenocarcinoma, although it notes mixed differentiation, which may require further clarification."
+  "comment": "The pathology report indicates a pT2, pN1 classification with a tumor stage of IIB. The tumor exhibits extensive invasion characteristics, including involvement of large pulmonary vessels and the pleura, which is significant for staging. The histologic diagnosis is confirmed as Lung Adenocarcinoma. The report highlights unusual features such as lumen-obstructing thrombi and minimal wall adhesion, which may have clinical implications."
 }

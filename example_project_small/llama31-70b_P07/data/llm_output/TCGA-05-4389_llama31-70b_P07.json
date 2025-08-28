@@ -14,15 +14,15 @@
     "pN_CD": 1.00,
     "pN_evidence": "The tumor classification is stated as pN0 in the pathology report, and all lymph nodes removed are tumor-free.",
 
-    "tumor_stage_stated": "stage IA",
+    "tumor_stage_stated": "Stage IA",
     "tumor_stage": "Stage IA",
     "tumor_stage_CD": 1.00,
-    "tumor_stage_evidence": "The tumor classification is stated as stage IA in the pathology report, and based on AJCC7 criteria, pT1 and pN0 correspond to Stage IA.",
+    "tumor_stage_evidence": "The tumor classification is stated as Stage IA in the pathology report, and based on AJCC7 criteria, pT1 and pN0 correspond to Stage IA.",
 
     "histologic_diagnosis_stated": "Mixed bronchopulmonary adenocarcinoma",
     "histologic_diagnosis": "Lung Adenocarcinoma",
     "histologic_diagnosis_CD": 0.80,
-    "histologic_diagnosis_evidence": "The pathology report mentions 'bronchopulmonary adenocarcinoma', which is consistent with lung adenocarcinoma, but the term 'mixed' might imply a component of another histological type.",
+    "histologic_diagnosis_evidence": "The pathology report mentions mixed bronchopulmonary adenocarcinoma, which is a type of lung adenocarcinoma.",
 
-    "comment": "The pathology report provides clear information on tumor classification and staging. However, the mention of 'mixed bronchopulmonary adenocarcinoma' might require further clarification or confirmation through additional investigations."
+    "comment": "The pathology report indicates that the tumor is completely removed by wedge excision and all lymph nodes removed are tumor-free. The histologic diagnosis is consistent with a bronchopulmonary origin of the tumor. However, further immunohistological investigations are needed to confirm this."
 }

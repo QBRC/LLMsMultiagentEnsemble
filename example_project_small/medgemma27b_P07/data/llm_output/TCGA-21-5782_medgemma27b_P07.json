@@ -1,0 +1,25 @@
+```json
+{
+"tumor_size_max_dimension_stated": "3.5 em",
+"tumor_size_max_dimension": "3.5",
+"tumor_size_max_dimension_CD": 1.00,
+"tumor_size_max_dimension_evidence": "The gross description states a 3.5 x 3.0 x 3.0 em firm mass.",
+"pT_stated": "T1",
+"pT": "T2a",
+"pT_CD": 0.80,
+"pT_evidence": "The tumor size is 3.5 cm. According to AJCC 7th edition, a tumor >3 cm but <=5 cm is classified as T2a.",
+"pN_stated": "N0",
+"pN": "N0",
+"pN_CD": 1.00,
+"pN_evidence": "The pathology report states 'One lymph node negative for metastatic carcinoma (0/1)'",
+"tumor_stage_stated": "Unknown",
+"tumor_stage": "Stage IIA",
+"tumor_stage_CD": 0.80,
+"tumor_stage_evidence": "Based on AJCC 7th edition criteria, pT2a and pN0 corresponds to Stage IIA.",
+"histologic_diagnosis_stated": "squamous cell carcinoma",
+"histologic_diagnosis": "Lung Squamous Cell Carcinoma",
+"histologic_diagnosis_CD": 1.00,
+"histologic_diagnosis_evidence": "The pathology report states 'Invasive, poorly differentiated, squamous cell carcinoma'.",
+"comment": "The pathology report describes a 3.5 cm poorly differentiated squamous cell carcinoma in the left lower lobe of the lung. The pleura and resection margins are negative. One sampled lymph node (level 9L) is negative for metastasis. The tumor size of 3.5 cm classifies it as T2a. With N0 status, the stage is IIA according to AJCC 7th edition criteria."
+}
+```

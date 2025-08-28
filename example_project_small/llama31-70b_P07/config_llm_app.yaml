@@ -33,4 +33,4 @@ predictor: llama31-70b_P07
 prompt_file_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/example_project_small/prompt_p07.txt
 prompt_id: P07
 system_message_file_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/example_project_small/system_message.txt
-var_val_list_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/example_project_small/variable-value_list.json
+var_val_dict_path: /project/DPDS/Xiao_lab/s221963/2025_LLMsAgents/example_project_small/variable-value_dict.json

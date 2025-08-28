@@ -2,27 +2,27 @@
   "tumor_size_max_dimension_stated": "Unknown",
   "tumor_size_max_dimension": "Unknown",
   "tumor_size_max_dimension_CD": 0.00,
-  "tumor_size_max_dimension_evidence": "No explicit tumor size or greatest dimension in centimeters mentioned in the report.",
+  "tumor_size_max_dimension_evidence": "No explicit tumor size dimension provided in the report.",
   
   "pT_stated": "pT2",
   "pT": "T2",
   "pT_CD": 1.00,
-  "pT_evidence": "The report states 'Tumor classification according to these findings pT2' and describes invasion of large pulmonary vessels and pleura, consistent with T2 category.",
+  "pT_evidence": "Tumor classification according to findings is stated as pT2 in the report, with invasion of large pulmonary vessels and pleura.",
   
   "pN_stated": "pN1",
   "pN": "N1",
   "pN_CD": 1.00,
-  "pN_evidence": "The report states 'pN1' and mentions a lymph node with tumor located in the hilus region next to tumor-infiltrated vessels, consistent with N1.",
+  "pN_evidence": "Lymph node with tumor located in the hilus region next to tumor-infiltrated large pulmonary vessels, classified as pN1.",
   
   "tumor_stage_stated": "stage IIB",
   "tumor_stage": "Stage IIB",
   "tumor_stage_CD": 1.00,
-  "tumor_stage_evidence": "The report states 'stage IIB'. According to AJCC 7th edition, pT2 and pN1 corresponds to Stage IIB.",
+  "tumor_stage_evidence": "Tumor stage stated as IIB in the report; based on pT2 and pN1 without distant metastasis, AJCC7 criteria correspond to Stage IIB.",
   
   "histologic_diagnosis_stated": "Extensive, central to peripheral bronchopulmonary adenocarcinoma of histologically mixed differentiation (G3)",
   "histologic_diagnosis": "Lung Adenocarcinoma",
   "histologic_diagnosis_CD": 1.00,
-  "histologic_diagnosis_evidence": "The diagnosis explicitly states bronchopulmonary adenocarcinoma with glandular differentiation.",
+  "histologic_diagnosis_evidence": "Diagnosis clearly states bronchopulmonary adenocarcinoma with glandular differentiation.",
   
-  "comment": "The pathology report describes a high-grade (G3) lung adenocarcinoma with mixed differentiation, involving large pulmonary vessels and pleura, with partial necrosis and lymph node involvement (N1). The tumor is classified as pT2 pN1, stage IIB according to AJCC 7th edition. The tumor size is not specified. The report notes unusual tumor invasion of pulmonary vessels with thrombi extending to the resection margin, which may impact surgical margins and prognosis. The RX (resection margin) status is uncertain due to tumor adherence at the vessel margin. Overall, the report provides sufficient information for staging except for tumor size measurement."
+  "comment": "The pathology report describes a high-grade (G3) bronchopulmonary adenocarcinoma with mixed differentiation, including tubuloglandular and fetal-type glandular components. The tumor shows invasion into large pulmonary vessels with thrombus formation and pleural involvement. Lymph node metastasis is present in the hilus region (pN1). The tumor is staged as pT2 pN1, corresponding to Stage IIB by AJCC 7th edition criteria. The resection margin status is RX due to tumor thrombus extending to the margin. The report highlights unusual vascular invasion and pleural surface involvement, which may impact prognosis and surgical management."
 }

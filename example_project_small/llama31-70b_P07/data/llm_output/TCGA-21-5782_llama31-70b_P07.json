@@ -1,28 +1,28 @@
 {
-    "tumor_size_max_dimension_stated": "3.5 cm",
-    "tumor_size_max_dimension": "3.5 cm",
-    "tumor_size_max_dimension_CD": "1.00",
-    "tumor_size_max_dimension_evidence": "The tumor size is stated in the pathology report as 3.5 x 3.0 x 3.0 em.",
-    
-    "pT_stated": "Unknown",
-    "pT": "T2",
-    "pT_CD": "0.80",
-    "pT_evidence": "The tumor size is greater than 3 cm, but less than or equal to 5 cm, and there is no mention of chest wall invasion or separate tumor nodules in the same lobe.",
-    
-    "pN_stated": "Unknown",
-    "pN": "N0",
-    "pN_CD": "1.00",
-    "pN_evidence": "The pathology report states that the lymph node is negative for metastatic carcinoma (0/1).",
-    
-    "tumor_stage_stated": "Unknown",
-    "tumor_stage": "Stage IB",
-    "tumor_stage_CD": "0.80",
-    "tumor_stage_evidence": "Based on the estimated pT category (T2) and pN category (N0), the tumor stage is Stage IB according to AJCC7 criteria.",
-    
-    "histologic_diagnosis_stated": "Invasive, poorly differentiated, squamous cell carcinoma",
-    "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
-    "histologic_diagnosis_CD": "1.00",
-    "histologic_diagnosis_evidence": "The pathology report states that the tumor is an invasive, poorly differentiated, squamous cell carcinoma.",
-    
-    "comment": "The pathology report describes a 3.5 cm invasive, poorly differentiated, squamous cell carcinoma in the left lower lobe of the lung, with negative pleura and inked resection margin. The lymph node is negative for metastatic carcinoma. The tumor stage is estimated to be Stage IB according to AJCC7 criteria."
+  "tumor_size_max_dimension_stated": "3.5 cm",
+  "tumor_size_max_dimension": "3.5 cm",
+  "tumor_size_max_dimension_CD": "1.00",
+  "tumor_size_max_dimension_evidence": "The tumor size is stated in the pathology report as 3.5 x 3.0 x 3.0 em.",
+  
+  "pT_stated": "Unknown",
+  "pT": "T2",
+  "pT_CD": "0.80",
+  "pT_evidence": "The tumor size is greater than 3 cm, but less than 5 cm, and there is no evidence of chest wall or diaphragm invasion.",
+  
+  "pN_stated": "Unknown",
+  "pN": "N0",
+  "pN_CD": "1.00",
+  "pN_evidence": "The lymph node is negative for metastatic carcinoma (0/1).",
+  
+  "tumor_stage_stated": "Unknown",
+  "tumor_stage": "Stage IB",
+  "tumor_stage_CD": "0.80",
+  "tumor_stage_evidence": "Based on the estimated pT category (T2) and pN category (N0), the tumor stage is Stage IB according to AJCC7 criteria.",
+  
+  "histologic_diagnosis_stated": "Invasive, poorly differentiated, squamous cell carcinoma",
+  "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
+  "histologic_diagnosis_CD": "1.00",
+  "histologic_diagnosis_evidence": "The histologic diagnosis is stated in the pathology report as invasive, poorly differentiated, squamous cell carcinoma.",
+  
+  "comment": "The pathology report describes a lung tumor with a size of 3.5 cm and negative pleura and resection margin. The lymph node is also negative for metastatic carcinoma. Based on these findings, the estimated pT category is T2, pN category is N0, and the tumor stage is Stage IB according to AJCC7 criteria."
 }

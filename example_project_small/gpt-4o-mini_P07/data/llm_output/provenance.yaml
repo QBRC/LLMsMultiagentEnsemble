@@ -1,5 +1,5 @@
 - dataset_id: lung
-  estimated_cost: $0.00282618
+  estimated_cost: $0.00282096
   failed_json_loading: []
   failed_request: []
   framework: AzureOpenAI
@@ -7,9 +7,9 @@
   model: gpt-4o-mini
   number_of_failed_json_loading: 0
   temperature: 0.0
-  time_ended: '2025-08-22 03:37:05.517290'
-  time_started: '2025-08-22 03:36:18.116353'
-  time_used: 0.790016 minutes
+  time_ended: '2025-08-28 14:26:01.042333'
+  time_started: '2025-08-28 14:25:07.806913'
+  time_used: 0.887257 minutes
   total_input_tokens: 16708
-  total_output_tokens: 5333
-  total_tokens: 22041
+  total_output_tokens: 5246
+  total_tokens: 21954

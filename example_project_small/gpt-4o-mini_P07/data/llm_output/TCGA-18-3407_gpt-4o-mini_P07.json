@@ -1,28 +1,28 @@
 {
-  "tumor_size_max_dimension_stated": "4.0 em",
+  "tumor_size_max_dimension_stated": 4.0,
   "tumor_size_max_dimension": 4.0,
   "tumor_size_max_dimension_CD": 1.00,
-  "tumor_size_max_dimension_evidence": "The maximum dimension of the tumor is stated as 4.0 em in the report.",
+  "tumor_size_max_dimension_evidence": "The maximum dimension of the tumor is stated as 4.0 cm in the report.",
   
   "pT_stated": "T2",
   "pT": "T2",
   "pT_CD": 1.00,
-  "pT_evidence": "The report indicates a diagnosis of T2 squamous cell carcinoma with no invasion into overlying visceral pleura.",
+  "pT_evidence": "The report indicates a diagnosis of invasive moderately-differentiated squamous cell carcinoma with no invasion into overlying visceral pleura, classified as T2.",
   
   "pN_stated": "N0",
   "pN": "N0",
   "pN_CD": 1.00,
-  "pN_evidence": "The lymph nodes examined were negative for malignancy, indicating no regional lymph node involvement.",
+  "pN_evidence": "The report states that the lobar lymph nodes examined were negative for malignancy, indicating no regional lymph node involvement.",
   
   "tumor_stage_stated": "Stage II",
   "tumor_stage": "Stage IIA",
   "tumor_stage_CD": 1.00,
-  "tumor_stage_evidence": "Based on pT (T2) and pN (N0), the tumor stage is estimated as Stage IIA according to AJCC 7th edition criteria.",
+  "tumor_stage_evidence": "Based on the estimated pT of T2 and pN of N0, the tumor stage is classified as Stage IIA according to AJCC 7th edition criteria.",
   
   "histologic_diagnosis_stated": "Invasive moderately-differentiated squamous cell carcinoma",
   "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
   "histologic_diagnosis_CD": 1.00,
-  "histologic_diagnosis_evidence": "The report clearly states the diagnosis as invasive moderately-differentiated squamous cell carcinoma.",
+  "histologic_diagnosis_evidence": "The report explicitly states the diagnosis as invasive moderately-differentiated squamous cell carcinoma.",
   
-  "comment": "The pathology report indicates a complete resection of a T2N0 squamous cell carcinoma with a maximum tumor dimension of 4.0 cm. All examined lymph nodes were negative for malignancy, supporting the N0 classification. The tumor stage is classified as Stage IIA based on the AJCC 7th edition criteria."
+  "comment": "The pathology report indicates a complete resection of a T2N0 squamous cell carcinoma with a maximum tumor dimension of 4.0 cm. The lymph nodes examined were negative for malignancy, supporting the classification of the tumor as Stage IIA. Overall, the findings suggest a favorable prognosis due to the absence of lymph node involvement."
 }

@@ -1,0 +1,25 @@
+```json
+{
+  "tumor_size_max_dimension_stated": "Unknown",
+  "tumor_size_max_dimension": "Unknown",
+  "tumor_size_max_dimension_CD": 0.00,
+  "tumor_size_max_dimension_evidence": "The report does not provide the maximum dimension of the tumor.",
+  "pT_stated": "pT4",
+  "pT": "T4",
+  "pT_CD": 1.00,
+  "pT_evidence": "The report explicitly states 'pT4'.",
+  "pN_stated": "pN1",
+  "pN": "N1",
+  "pN_CD": 1.00,
+  "pN_evidence": "The report explicitly states 'pN1'.",
+  "tumor_stage_stated": "stage IV",
+  "tumor_stage": "Stage IV",
+  "tumor_stage_CD": 1.00,
+  "tumor_stage_evidence": "The report explicitly states 'stage IV'.",
+  "histologic_diagnosis_stated": "histologically mixed adenocarcinoma",
+  "histologic_diagnosis": "Lung Adenocarcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "The report explicitly states 'histologically mixed adenocarcinoma of the right lower lobe of the lung'. Immunohistochemical analysis confirms the diagnosis of an adenocarcinoma of the lung.",
+  "comment": "The pathology report describes a histologically mixed adenocarcinoma of the right lower lobe of the lung, classified as pT4 pN1 pM1 (P/E) V1 RX, stage IV. The tumor shows pleural invasion and metastatic dissemination to both pleural layers and lymph nodes. The immunohistochemical analysis confirms the diagnosis of lung adenocarcinoma. The RX category is due to the possibility of residual carcinoma cells in the pleural effusions."
+}
+```

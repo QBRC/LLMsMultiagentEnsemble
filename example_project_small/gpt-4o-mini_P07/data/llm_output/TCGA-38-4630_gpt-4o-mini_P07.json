@@ -7,22 +7,22 @@
   "pT_stated": "Unknown",
   "pT": "T2",
   "pT_CD": 0.85,
-  "pT_evidence": "The tumor is 4.5 cm in greatest dimension and is described as directly involving a medium-sized bronchus, which corresponds to T2 category based on AJCC 7th edition criteria.",
-  
+  "pT_evidence": "The tumor is 4.5 cm in greatest dimension and is described as directly involving a medium-sized bronchus, which corresponds to T2 classification (tumor size > 3 cm but ≤ 5 cm).",
+
   "pN_stated": "No metastatic carcinoma identified (0/7 total)",
   "pN": "N0",
   "pN_CD": 1.00,
   "pN_evidence": "The report states that no metastatic carcinoma was identified in the lymph nodes (0/7), indicating N0 status.",
-  
+
   "tumor_stage_stated": "Unknown",
   "tumor_stage": "Stage IIA",
   "tumor_stage_CD": 0.90,
-  "tumor_stage_evidence": "Based on pT being T2 and pN being N0, the tumor stage is estimated as Stage IIA according to AJCC 7th edition criteria.",
-  
+  "tumor_stage_evidence": "Based on pT (T2) and pN (N0), the tumor stage is classified as Stage IIA according to AJCC 7th edition criteria.",
+
   "histologic_diagnosis_stated": "Adenocarcinoma, poorly differentiated",
   "histologic_diagnosis": "Lung Adenocarcinoma",
   "histologic_diagnosis_CD": 1.00,
-  "histologic_diagnosis_evidence": "The report clearly states the diagnosis as adenocarcinoma, which is a type of lung carcinoma.",
-  
-  "comment": "The pathology report indicates a poorly differentiated adenocarcinoma in the right upper lobe with a maximum tumor size of 4.5 cm. There is no lymph node involvement, and the tumor is classified as T2 due to its size and involvement with a bronchus. The tumor stage is estimated as Stage IIA based on the AJCC 7th edition criteria."
+  "histologic_diagnosis_evidence": "The report clearly states the diagnosis as poorly differentiated adenocarcinoma.",
+
+  "comment": "The pathology report indicates a poorly differentiated adenocarcinoma of the right upper lobe with a maximum tumor size of 4.5 cm. There is no lymph node involvement, and the tumor is classified as T2, leading to a final staging of Stage IIA. The bronchial margin is not involved, but there is focal pleural involvement. Overall, the findings suggest a localized tumor without metastasis."
 }

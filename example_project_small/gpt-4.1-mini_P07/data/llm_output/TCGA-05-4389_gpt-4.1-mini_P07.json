@@ -22,7 +22,7 @@
   "histologic_diagnosis_stated": "Mixed bronchopulmonary adenocarcinoma",
   "histologic_diagnosis": "Lung Adenocarcinoma",
   "histologic_diagnosis_CD": 0.90,
-  "histologic_diagnosis_evidence": "Diagnosis states 'Mixed bronchopulmonary adenocarcinoma' consistent with lung adenocarcinoma.",
+  "histologic_diagnosis_evidence": "Diagnosis states 'Mixed bronchopulmonary adenocarcinoma' consistent with lung adenocarcinoma subtype.",
   
-  "comment": "The pathology report describes a mixed bronchopulmonary adenocarcinoma completely excised by wedge resection. The tumor is classified as pT1, pN0, R0 with stage IA according to AJCC7 criteria. Lymph nodes and margins are tumor-free. Tumor size dimension is not provided. Immunohistological confirmation is pending. Overall, the report supports early-stage lung adenocarcinoma with complete resection and no nodal involvement."
+  "comment": "The pathology report describes a mixed bronchopulmonary adenocarcinoma completely removed by wedge excision. The tumor is classified as pT1, pN0, R0 with stage IA according to AJCC7 criteria. Lymph nodes and resection margins are tumor-free. Tumor size dimension is not provided. Immunohistological confirmation is pending. Overall, the report supports early-stage lung adenocarcinoma with complete resection and no nodal involvement."
 }

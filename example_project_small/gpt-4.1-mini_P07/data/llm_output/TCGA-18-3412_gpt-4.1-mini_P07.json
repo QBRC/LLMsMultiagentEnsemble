@@ -5,24 +5,24 @@
   "tumor_size_max_dimension_evidence": "Diagnosis section states 'Tumor greatest diameter 4.7 cm' in left lower lobe lung lobectomy specimen.",
   
   "pT_stated": "pT2",
-  "pT": "T2a",
-  "pT_CD": 0.90,
-  "pT_evidence": "Tumor size is 4.7 cm (which falls into T2a category: >3 cm and ≤5 cm). Tumor invades peribronchial fatty tissue and lobar bronchus but no mention of invasion of visceral pleura or main bronchus <2 cm from carina. Pleura is intact but tumor extends beyond pleura into soft tissue adjacent to bronchus. AJCC7 T2a includes tumor >3 cm and ≤5 cm or tumor with invasion of visceral pleura. The report states pleura intact but tumor extends beyond pleura into ragged soft tissue adjacent to bronchus, which may be peribronchial tissue invasion consistent with T2. No evidence of main bronchus involvement <2 cm from carina or other T3/T4 features. Hence T2a is estimated.",
+  "pT": "T2",
+  "pT_CD": 0.95,
+  "pT_evidence": "Tumor size 4.7 cm (greater than 3 cm but less than or equal to 5 cm) and invasion into peribronchial fatty tissue at the hilum supports T2 category per AJCC 7th edition.",
   
   "pN_stated": "N0",
   "pN": "N0",
   "pN_CD": 1.00,
-  "pN_evidence": "Multiple lymph nodes examined (interlobar ST11, lobar ST12, aorta-pulmonary ST5, segmental and peribronchial lymph nodes) are negative for malignancy. Diagnosis states '2 lobar peribronchial lymph nodes negative for tumor' and 'All 4 lobar and 3 segmental peribronchial lymph nodes negative for tumor' and 'Negative for malignancy, lymph node' in other stations.",
+  "pN_evidence": "Multiple lymph nodes (interlobar ST11, lobar ST12, aorta-pulmonary ST5, lobar and segmental peribronchial lymph nodes) are negative for malignancy.",
   
-  "tumor_stage_stated": "Stage IB",
-  "tumor_stage": "Stage IB",
+  "tumor_stage_stated": "Stage IIA",
+  "tumor_stage": "Stage IIA",
   "tumor_stage_CD": 0.90,
-  "tumor_stage_evidence": "Based on AJCC7, T2a N0 M0 corresponds to Stage IB. The report states 'this tumor is staged as a pT2NO cancer' and tumor size and nodal status support Stage IB. No evidence of distant metastasis is provided.",
+  "tumor_stage_evidence": "Based on pT2 and pN0 without evidence of distant metastasis, AJCC 7th edition staging corresponds to Stage IIA.",
   
   "histologic_diagnosis_stated": "Squamous cell carcinoma, moderately differentiated",
   "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
   "histologic_diagnosis_CD": 1.00,
-  "histologic_diagnosis_evidence": "Diagnosis states 'Squamous cell carcinoma, moderately differentiated, central' in left lower lobe lung lobectomy specimen.",
+  "histologic_diagnosis_evidence": "Diagnosis section clearly states 'Squamous cell carcinoma, moderately differentiated, central.'",
   
-  "comment": "The pathology report describes a moderately differentiated squamous cell carcinoma of the left lower lobe lung with a maximum tumor diameter of 4.7 cm. The tumor invades peribronchial fatty tissue and lobar bronchus but the pleura is intact. Multiple lymph nodes from various stations are negative for malignancy. Bronchial resection margin was initially positive but negative on completion pneumonectomy. Based on tumor size and nodal status, the tumor is staged as pT2a N0 M0, corresponding to AJCC7 Stage IB. The report is comprehensive with multiple lymph node stations sampled and clear description of tumor extent. The main limitation is lack of explicit mention of distant metastasis (M status), but clinical history and report imply no distant spread. Overall, the diagnosis and staging are well supported."
+  "comment": "The pathology report describes a moderately differentiated squamous cell carcinoma in the left lower lobe lung with a maximum tumor diameter of 4.7 cm. The tumor invades peribronchial fatty tissue and lobar bronchus but no lymph node metastases were identified in multiple sampled lymph nodes including interlobar, lobar, segmental, and aorta-pulmonary stations. Bronchial resection margin was initially positive but negative on completion pneumonectomy. The tumor is staged as pT2N0, corresponding to Stage IIA by AJCC 7th edition criteria. The report is comprehensive with detailed gross and microscopic findings. The only minor limitation is the lack of explicit mention of distant metastasis evaluation, but clinical history and lymph node sampling suggest no distant spread. Overall, the data supports a moderately advanced localized squamous cell carcinoma with no nodal involvement."
 }

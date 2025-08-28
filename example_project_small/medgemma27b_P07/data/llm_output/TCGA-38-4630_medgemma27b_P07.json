@@ -1,0 +1,25 @@
+```json
+{
+  "tumor_size_max_dimension_stated": "4.5 cm",
+  "tumor_size_max_dimension": "4.5",
+  "tumor_size_max_dimension_CD": 1.00,
+  "tumor_size_max_dimension_evidence": "Tumor size: 4.5 x 4.1 x 3.5 em, Tumor size (greatest dimension): 4.5 em diameter",
+  "pT_stated": "Unknown",
+  "pT": "T2a",
+  "pT_CD": 0.95,
+  "pT_evidence": "Tumor size is 4.5 cm (T2). The tumor directly involves a medium sized bronchus (T2a).",
+  "pN_stated": "0/7",
+  "pN": "N0",
+  "pN_CD": 1.00,
+  "pN_evidence": "Lymph nodes (by node group): no metastatic carcinoma identified (0/7 total)",
+  "tumor_stage_stated": "Unknown",
+  "tumor_stage": "Stage IIA",
+  "tumor_stage_CD": 0.95,
+  "tumor_stage_evidence": "Based on pT2a and pN0, the tumor stage is Stage IIA according to AJCC 7th edition.",
+  "histologic_diagnosis_stated": "Adenocarcinoma, poorly differentiated, with focal papillary architecture",
+  "histologic_diagnosis": "Lung Adenocarcinoma",
+  "histologic_diagnosis_CD": 1.00,
+  "histologic_diagnosis_evidence": "Tumor histologic type (WHO classification) : adenocarcinoma, with focal papillary features",
+  "comment": "The patient underwent a right upper lobe lobectomy for non-small cell lung carcinoma. The final diagnosis is poorly differentiated adenocarcinoma, measuring 4.5 cm in greatest dimension. The tumor involves a medium sized bronchus and focally involves the pleura. Seven lymph nodes were examined, and none contained metastatic carcinoma. The tumor stage is IIA based on AJCC 7th edition criteria (pT2a N0). The bronchial margin is negative, but the pleural margin is focally involved."
+}
+```
