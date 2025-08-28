@@ -6,6 +6,9 @@ import ollama
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 from transformers import BitsAndBytesConfig
 import torch
+import fire
+
+import re
 
 
 class LLMAgent:
@@ -211,8 +214,8 @@ class LLMAgent:
         output_tokens = None
         total_tokens = None
         
-        if response:
-            if not self.framework: 
+        if response is not None:
+            if (not self.framework) or (self.framework in ['huggingface', 'Huggingface']): 
                 # how to get token usage generally? -- temporarily set to 0.
                 input_tokens = 0
                 output_tokens = 0
