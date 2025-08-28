@@ -1,3 +1,0 @@
-2025-2-13
-lin2 124: add parameter to model query
-max_completion_tokens = 8192

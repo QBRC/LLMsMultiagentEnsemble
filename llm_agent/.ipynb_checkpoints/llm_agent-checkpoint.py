@@ -35,7 +35,7 @@ class LLMAgent:
 
         # ------------------------
         # if framework is empty, use transfomers to construct a LM from model path (huggingface or local)
-        if not framework or framework in ['huggingface', 'Huggingface']: 
+        if not framework or framework in ['huggingface', 'Huggingface']: # to update!!
             # self.tokenizer = AutoTokenizer.from_pretrained(model)
             
             bnb_bits = quantification # config, if use quantification 

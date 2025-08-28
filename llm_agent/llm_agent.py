@@ -91,9 +91,12 @@ class LLMAgent:
     
 
     # Function to a request to the language model and get a response
-    def request(self, prompt, system_message='', temperature=0.0, json_output=True):
+    def request(self, prompt, system_message='', temperature=0.001, json_output=True):
         """Make request to LLM."""
 
+        if temperature == 0:
+            temperature = 0.001
+            
         response = None
         
         # Request via transformers to a LLM in haggingface ----------------------------------
@@ -105,7 +108,7 @@ class LLMAgent:
                 # tokenize input
                 inputs = self.tokenizer(message, return_tensors="pt").to("cuda")
                 # get output from LLM with the inputs
-                response = self.model.generate(**inputs, 
+                response = self.client.generate(**inputs, 
                                         do_sample=True,
                                         temperature=temperature,
                                         # top_p=0.95, top_k=0, 
@@ -176,8 +179,8 @@ class LLMAgent:
         # Initialize 
         response_content = None
         
-        if response:
-            if not self.framework: 
+        if response is not None:
+            if (not self.framework) or (self.framework in ['huggingface', 'Huggingface']): 
                 # get response contents from LLM agent using transformers
                 response_content = self.tokenizer.decode(response[0], skip_special_tokens=True)
                 response_content = self.extract_answer(response_content)
