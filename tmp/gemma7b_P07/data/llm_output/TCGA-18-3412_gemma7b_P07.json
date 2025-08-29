@@ -1,9 +1,0 @@
-{
-  "tumor_size_max_dimension": "4.7 cm",
-  "pT": "T2a",
-  "pN": "N0",
-  "tumor_stage": "Stage IB",
-  "histologic_diagnosis": "Lung Squamous Cell Carcinoma",
-
-  "comment": "The pathology report describes a case of lung squamous cell carcinoma in a 58-year-old male patient. The tumor is located in the left lower lobe of the lung and measures 4.7 cm in maximum diameter. The tumor invades into the lobar bronchus and into the segmental bronchi. The tumor is also 2.0 em away from the staple line resection margin. The overall stage of the tumor is stage IB."
-}

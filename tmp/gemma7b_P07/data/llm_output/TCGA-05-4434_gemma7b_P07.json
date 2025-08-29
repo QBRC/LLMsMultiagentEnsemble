@@ -1,9 +1,0 @@
-{
-  "tumor_size_max_dimension": "Unknown",
-  "pT": "T4",
-  "pN": "N1",
-  "tumor_stage": "Stage IV",
-  "histologic_diagnosis": "Lung Adenocarcinoma",
-
-  "comment": "The pathology report describes an extensive and locoregionally advanced, central to peripheral, very likely primarily peripheral bronchopulmonary, histologically mixed adenocarcinoma of the right lower lobe of the lung with pleural invasion and metastatic dissemination to both pleural layers and lymph nodes. The tumor stage is stage IV based on AJCC 7th edition criteria. The majority of the tumor cells exhibit double expression of low and high molecular weight keratins (M903 and 902) and TTF1 positivity in the glandular differentiation component. The immune profile confirms the diagnosis of an adenocarcinoma of the lung of mixed differentiation."
-}
