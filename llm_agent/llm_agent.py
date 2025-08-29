@@ -1,4 +1,5 @@
 import os
+import gc
 
 from openai import OpenAI
 from openai import AzureOpenAI
@@ -17,7 +18,7 @@ class LLMAgent:
                  framework:str='Ollama', # 'Ollama', 'OpenAI', 'AzureOpenAI', or empty (huggingface)
                  model:str='llama3.3', # language model to use, llama3.1:8b as default; or huggingface model path
                  ollama_port = '11434', # default value from Ollama
-                 quantification = None # default: torch_dtype=torch.float16
+                 quantification = None # default: torch_dtype=torch.bfloat16
                  ):
         """Constructor to initialize the LLM Agent instance
         
@@ -36,8 +37,9 @@ class LLMAgent:
         self.client = None
         self.tokenizer = None
 
-        torch.cuda.empty_cache()
-
+        gc.collect()
+        torch.cuda.empty_cache() 
+        
         # ------------------------
         # if framework is empty, use transfomers to construct a LM from model path (huggingface or local)
         if not framework or framework in ['huggingface', 'Huggingface']: 

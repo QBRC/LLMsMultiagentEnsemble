@@ -1,5 +1,0 @@
-{
-"AF_Diagnosis": "<select one from ['AF','Probable AF','Possible AF','Non-AF','Not Specified']>", 
-"AF_pr": "<a number in [0,1] in two decimal places (e.g. 0.85), your estimated probability of the presence of AFib or AFL in the current tracing.>", 
-"Explanation": "<text, to explan your answers with support of the evidence presented in the ECG report>" 
-}

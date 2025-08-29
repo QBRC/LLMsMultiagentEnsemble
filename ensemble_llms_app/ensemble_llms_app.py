@@ -159,7 +159,8 @@ class EnsembleLLMsApp:
             # create LLMApp object for each llm_app specified with config_llm_app.yaml
             llm_app = LLMApp(app['app_config_file_path'])
             # add the created llm_app object to llm_apps list
-            self.llm_apps.append(app)
+            # self.llm_apps.append(app)
+            
             # launch the created llm_app to serve its application
             llm_app.compute()
                         

@@ -1,5 +1,6 @@
 import os
 import shutil
+import gc
 import time
 from datetime import datetime
 
@@ -131,6 +132,20 @@ class LLMApp:
         print(f"\nThe output csv file saved to {csv_file_path}.")
         print(f"Computing with {self.model_id} for {self.dataset_id} succeed.\n")
 
+        # # Before deletion
+        # print("GPU memory before deletion:")
+        # print(torch.cuda.memory_summary())
+
+        del agent.client
+        del agent.tokenizer
+        del agent
+        gc.collect()
+        # release memory to CUDA driver, rather than hold by caching allocator 
+        torch.cuda.memory.empty_cache() 
+
+        # # After deletion
+        # print("\nGPU memory after deletion:")
+        # print(torch.cuda.memory_summary())
 
     def make_batch_call(self,
             agent:LLMAgent,
