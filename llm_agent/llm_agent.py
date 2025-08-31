@@ -49,7 +49,6 @@ class LLMAgent:
             if bnb_bits is None or bnb_bits not in [4,8]:
                 self.client = AutoModelForCausalLM.from_pretrained(model, 
                                                              torch_dtype=torch.bfloat16, 
-                                                             # quantization_config=quantization_config,
                                                              # low_cpu_mem_usage=True, 
                                                              device_map="auto")
             else:
@@ -98,17 +97,16 @@ class LLMAgent:
     
 
     # Function to a request to the language model and get a response
-    def request(self, prompt, system_message='', temperature=0.001, json_output=True):
+    def request(self, prompt, system_message='', temperature=0.0, json_output=True):
         """Make request to LLM."""
-
-        if temperature == 0:
-            temperature = 0.001
             
         response = None
         
         # Request via transformers to a LLM in haggingface ----------------------------------
         # Change the follow block as needed for the specific LLM to call
         if (not self.framework) or (self.framework in ['huggingface', 'Huggingface']):
+            if temperature == 0:
+                temperature = 0.001 # avoid transformers error: 'temperature` (=0.0) has to be a strictly positive float ...'
             try:
                 # construct messages
                 message =  f"{system_message}### User: {prompt}\n\n### Output:\n"

@@ -1,5 +1,7 @@
 import os
 import sys
+import shutil
+import gc
 import time
 from datetime import datetime
 
@@ -38,8 +40,8 @@ class EnsembleLLMsApp:
         Keyword arguments:
         config_yaml_file_path -- the path of the LLM application configuration file in YAML.
         """
-        
-        torch.cuda.empty_cache() 
+        gc.collect()
+        torch.cuda.memory.empty_cache() 
         
         with open(config_yaml_file_path, 'r') as f:
             try:
@@ -48,45 +50,49 @@ class EnsembleLLMsApp:
                 # Project
                 self.project_name = self.app_config['project_name']
                 self.home_path = os.path.realpath('.')
-                print(f'Home path: {self.home_path}')
+                print(f'Home: {self.home_path}')
                 try:                    
-                    self.data_folder_path = os.path.join(self.home_path, os.path.realpath(self.app_config['data_folder_name']))
+                    self.data_folder_path = os.path.relpath(os.path.realpath(self.app_config['data_folder_name']),self.home_path)
                 except:
                     self.data_folder_path = os.path.join(self.home_path, 'data')   
                 
                 # Prompt
-                self.prompt_file_path = os.path.join(self.home_path,os.path.realpath(self.app_config['prompt_file_path']))
-                self.prompt_id = self.app_config['prompt_id']
+                # self.prompt_file_path = os.path.relpath(self.app_config['prompt_file_path'],self.home_path)
                 try:
-                    self.sys_msg_file_path = os.path.join(self.home_path,os.path.realpath(self.app_config['system_message_file_path']))
+                    self.prompt_id = self.app_config['prompt_id']
                 except:
-                    self.sys_msg_file_path = None
+                    self.prompt_id = 'Prompt000'
+                # try:
+                #     self.sys_msg_file_path = os.path.relpath(self.app_config['system_message_file_path'],self.home_path)
+                # except:
+                #     self.sys_msg_file_path = None
                 
-                # Input data
-                self.input_data_path = os.path.join(self.home_path,os.path.realpath(self.app_config['input_data_path']))
+                # Data
+                self.input_data_path = os.path.relpath(self.app_config['input_data_path'],self.home_path)
                 self.dataset_id = self.app_config['dataset_id']
                 self.input_text_col = self.app_config['input_text_column_name']
                 self.input_data_id_col = self.app_config['input_data_id_column_name']
 
-                # Output data
-                self.var_val_dict_path = os.path.join(self.home_path,os.path.realpath(self.app_config['var_val_dict_path']))
                 try:
-                    with open(self.var_val_dict_path, 'r') as f:
+                    var_val_dict_path = os.path.relpath(self.app_config['var_val_dict_path'],self.home_path)
+                    with open(var_val_dict_path, 'r') as f:
                         self.var_val_dict = json.load(f,object_pairs_hook=OrderedDict) # keep original order
                 except Exception as e:
-                    print(f"Error: failed to get variable-value list from {self.var_val_dict_path}\n{e}")
-
-                self.json_output_template_path = os.path.join(self.home_path,os.path.realpath(self.app_config['json_output_template_path']))
+                    print(f"Error: failed to get variable-value dictionary from {var_val_dict_path}\n{e}")
+                
                 try:
-                    with open(self.json_output_template_path, 'r') as f:
+                    json_output_template_path = os.path.relpath(self.app_config['json_output_template_path'],self.home_path)
+                    with open(json_output_template_path, 'r') as f:
                         json_template = json.load(f,object_pairs_hook=OrderedDict) # keep original order
                         self.json_key_list = list(json_template.keys())
+                        self.json_output_template_str = f.read()
                 except Exception as e:
-                    print(f"Error: failed to get keys from {self.json_output_template_path}\n{e}")
+                    print(f"Error: failed to get keys from {json_output_template_path}\n{e}")
+
                 # verify vars in json output template
                 for v in self.var_val_dict.keys():
                     if v not in self.json_key_list:
-                        print(f"Error: Variable {v} is not specified in the JSON output template.")
+                        print(f"Warning: Variable {v} is not specified in the JSON output template.")
                         sys.exit()
 
                 # Specs for LLM agent apps
@@ -104,19 +110,18 @@ class EnsembleLLMsApp:
 
             # create a dictionary containing common key-value pairs to all llm_apps
             dic = {
-                'system_message_file_path': self.sys_msg_file_path,
-                'prompt_file_path': self.prompt_file_path,
+                'system_message_file_path': self.app_config['system_message_file_path'],
+                'prompt_file_path': self.app_config['prompt_file_path'],
                 'prompt_id': self.prompt_id,
-                'input_data_path': self.input_data_path,
+                'input_data_path': self.app_config['input_data_path'],
                 'dataset_id': self.dataset_id,
                 'input_data_id_column_name': self.input_data_id_col,
                 'input_text_column_name': self.input_text_col,
-                'var_val_dict_path': self.var_val_dict_path,
-                # 'var_val_dict': self.var_val_dict,
-                'json_output_template_path':self.json_output_template_path,
+                'var_val_dict_path': self.app_config['var_val_dict_path'],
+                'json_output_template_path':self.app_config['json_output_template_path'],
                 'json_key_list': self.json_key_list
             }
-            
+
             # create full configuration for each LLM Agent app
             predictors = []
             for app in self.llm_apps_specs:
@@ -125,17 +130,30 @@ class EnsembleLLMsApp:
 
                 # add predictor to the llm_app
                 app.update({'predictor': predictor})
+
+                # add quantification, if specified
+                if "quntification" in app.keys():
+                    app.update({"quntification":f"{app['quntification']}"})
+                    
+                # add ollama port, if specified
+                if "ollama_port" in app.keys():
+                    app.update({"ollama_port":f"{app['ollama_port']}"})
                 
-                # add app_path for the llm_app
-                app.update({'home_path': os.path.join(self.home_path, f"{app['predictor']}")})
+                # # add app_path for the llm_app
+                app_home_path = os.path.join(self.home_path, f"{app['predictor']}")
+                app.update({'home_path': os.path.relpath(app_home_path)})
+                # create folder for each llm_app; if exists, remove first
+                if os.path.exists(app_home_path) and os.path.isdir(app_home_path):
+                    try:
+                        shutil.rmtree(app_home_path)
+                    except OSError as e:
+                        print(f"Error removing directory '{app_home_path}': {e}")
+                os.makedirs(app_home_path, exist_ok=True)
 
                 # add common key-value pairs to each llm_app
                 app.update(dic)
                 
-                # create folder for each llm_app
-                os.makedirs(app['home_path'], exist_ok=True)
-
-                config_yaml_file_path = os.path.join(app['home_path'], 'config_llm_app.yaml')
+                config_yaml_file_path = os.path.relpath(os.path.join(app['home_path'],'config_llm_app.yaml'), self.home_path)
                 # save the config path to app
                 app.update({'app_config_file_path':config_yaml_file_path})
 
@@ -143,7 +161,8 @@ class EnsembleLLMsApp:
                 with open(config_yaml_file_path, 'w') as f:
                     yaml.dump(app, f)
                     
-            self.predictors = predictors        
+            self.predictors = predictors
+            print(predictors)
                     
 
     def launch(self):
@@ -171,6 +190,11 @@ class EnsembleLLMsApp:
         print(f"\nEnd at: {end_time_str}")        
         print(f"Elapsed time: {elapsed_time/60:2f} minutes ({elapsed_time:2f} seconds).\n")
 
+        del llm_app
+        gc.collect()
+        # release memory to CUDA driver, rather than hold by caching allocator 
+        torch.cuda.memory.empty_cache() 
+                
     
     def aggregate(self, revised_var_list:list=[]):
         """Aggregate the output csv files from every llm_app.

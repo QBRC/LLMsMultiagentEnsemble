@@ -1,6 +1,6 @@
 You will read an ECG report to be provided at the end. This report is among a series of ECG reports. Each ECG report contains a cardiologist's diagnosis of cardiac rhythms in one specific tracing, called "current tracing" in the report. Your task is to classify the cardiologist's diagnosis for the current tracing into five classes as follows: 
 
-{{<Variable-Value List>}}
+{{<Variable-Value Dictionary>}}
 
 1. "AF", if the report surely assesses the presence of atrial fibrillation (AFib) or atrial flutter (AFL) with complete certainty. Let AF be AFib OR AFL. In this class of cases, the estimated probability of AF (AF_pr) shall be 1.0. 
 2. "Probable AF", if the report assesses AFib or AFL with higher confidence, where there is no secondary rhythm beyond AFib/AFL explicitly stated. In this class of cases, the report describes the primary rhythm as 'probable atrial fibrillation/flutter', 'most likely fibrillation/flutter', 'consistent with fibrillation/flutter', or other equivalent terms. In this class of cases, the estimated AF_pr could be smaller than 1.0 but close to 1.0, depending on the level of confidence shown in the cardiologist's diagnostic statements. 
@@ -18,3 +18,5 @@ Please do remember that "probable atrial fibrillation (or atrial flutter)" is a 
 Please output in a single JSON file and do not output anything else. Make sure the output JSON data is in legitimate JSON format. In your JSON output, ensure each value is embraced with a pair of straight double quotes; do not use any double quotation marks within the string of a value.  
 
 **ECG Report**: 
+
+{{<input_data>}}

@@ -10,10 +10,6 @@ import numpy as np
 import json
 from collections import OrderedDict
 import re
-import matplotlib.pyplot as plt
-# import seaborn as sns
-# from sklearn.metrics import confusion_matrix, accuracy_score, f1_score, cohen_kappa_score, recall_score, precision_score, jaccard_score, mean_absolute_error, mean_squared_error, r2_score
-from sklearn.metrics import * 
 
 import torch
 import fire
@@ -34,40 +30,93 @@ class LLMApp:
         with open(config_yaml_file_path, 'r') as f:
             try:
                 self.app_config = yaml.safe_load(f)
-                # Project
+                # Project ------
                 try:                    
                     self.home_path = os.path.realpath(self.app_config['home_path'])
                 except:
                     self.home_path = os.path.realpath('.')
-                print(f'LLM agent app home path: {self.home_path}')
-                try:                    
-                    self.data_folder_path = os.path.join(self.home_path,self.app_config['data_folder_name'])
-                except:
-                    self.data_folder_path = os.path.join(self.home_path, 'data')                    
-                self.llm_output_path = os.path.join(self.data_folder_path, 'llm_output')
+                print(f'LLM agent app home: {self.home_path}')
+                os.makedirs(self.home_path, exist_ok=True)
+                
                 # LLM
                 self.model = self.app_config['model']
                 self.model_id = self.app_config['model_id']
                 self.framework = self.app_config['framework']
-                # prompt
-                self.sys_msg_file_path = os.path.realpath(self.app_config['system_message_file_path'])
-                self.prompt_file_path = os.path.realpath(self.app_config['prompt_file_path'])
-                self.prompt_id = self.app_config['prompt_id']
-                # input data
+                try:
+                    self.ollama_port = self.app_config['ollama_port']
+                except:
+                    self.ollama_port = '11434' # default at Ollama
+                try:
+                    self.quantification = self.app_config['quantification']
+                except:
+                    self.quantification = None
+
+                # output data folder
+                try:                    
+                    self.data_folder_path = os.path.join(self.home_path,self.app_config['data_folder_name'])                    
+                except:
+                    self.data_folder_path = os.path.join(self.home_path, 'data')                    
+                self.llm_output_path = os.path.join(self.data_folder_path, 'llm_output')
+                # Create LLM output path, if not exist.
+                os.makedirs(self.llm_output_path, exist_ok=True)
+
+
+                # prompt ------
+                with open(self.app_config['prompt_file_path'], 'r') as f:
+                    self.prompt = f.read()
+                try:
+                    with open(self.app_config['system_message_file_path'], 'r') as f:
+                        self.sys_msg = f.read()
+                except Exception as e:
+                        self.sys_msg=''
+                try:
+                    self.prompt_id = self.app_config['prompt_id']
+                except:
+                    self.prompt_id = 'Prompt000'
+                    
+                # load var_val_dict and/or var_list
+                try:
+                    with open(self.app_config['var_val_dict_path'], 'r') as f:
+                        self.var_val_dict_str = f.read() # text form, verified json string
+                        self.var_list = list(json.loads(self.var_val_dict_str).keys())
+                except Exception as e:
+                    print(f"Error: failed to get variable-value list from {self.app_config['var_val_dict_path']}\n{e}")
+                    self.var_val_dict_str = ''
+                    # try to see if a variable list provided
+                    try:
+                        with open(self.app_config['var_list_path'], 'r') as f:
+                            self.var_list = list(json.load(f)) 
+                    except:
+                        self.var_list = []
+                # load json_output_template
+                try:
+                    with open(self.app_config['json_output_template_path'], 'r') as f:
+                        self.json_output_template_str = f.read()
+                        self.json_output_template = json.loads(self.json_output_template_str,object_pairs_hook=OrderedDict) # keep original order
+                        self.json_key_list = list(self.json_output_template.keys())
+                except Exception as e:
+                    print(f"Error: failed to get keys from {self.app_config['json_output_template_path']}\n{e}")
+                    self.json_key_list = []
+                    
+                # # verify vars in json output template
+                # for v in self.var_list:
+                #     if v not in self.json_key_list:
+                #         print(f"Warning: Variable {v} is not specified in the JSON output template.")
+                #         sys.exit()
+                
+                # embed var_list, var_val_dict, and json_output_template into prompt self.prompt, if prompt template contains.
+                self.prompt = self.prompt.replace('{{<Variable List>}}',json.dumps(self.var_list))   
+                self.prompt = self.prompt.replace('{{<Variable-Value Dictionary>}}',self.var_val_dict_str)
+                self.prompt = self.prompt.replace('{{<json_output_template>}}',self.json_output_template_str)   
+
+                self.predictor = f'{self.model_id}_{self.prompt_id}'
+                
+                # input data ------
                 self.input_data_path = os.path.realpath(self.app_config['input_data_path'])
                 self.dataset_id = self.app_config['dataset_id']
-                self.predictor = f'{self.model_id}_{self.prompt_id}'
                 self.input_text_col = self.app_config['input_text_column_name']
                 self.input_data_id_col = self.app_config['input_data_id_column_name']
-                # output data
-                self.var_val_dict_path = os.path.realpath(self.app_config['var_val_dict_path'])
-                self.json_output_template_path = os.path.realpath(self.app_config['json_output_template_path'])
-                try:
-                    with open(self.json_output_template_path, 'r') as f:
-                        json_template = json.load(f,object_pairs_hook=OrderedDict) # text structured, but not verified json
-                        self.json_key_list = json_template.keys()
-                except:
-                    print(f"Error: failed to get keys from {self.app_config['json_output_data_template']}\n{e}")
+                
             except yaml.YAMLError as e:
                 print(f"Error: reading yaml configuration file failed. {e}")
         
@@ -76,38 +125,22 @@ class LLMApp:
         """Set up and use LLM to compute."""
 
         # Create a LLM agent.
-        agent = LLMAgent(framework=self.framework, model=self.model)
+        agent = LLMAgent(framework=self.framework, model=self.model, ollama_port=self.ollama_port, quantification=self.quantification)
         
         # Read in input data.
         df = pd.read_csv(self.input_data_path)
         
         # Ensure the input text col is text type
         df[self.input_text_col] = df[self.input_text_col].astype(str)
-        
-        # Read in prompt.
-        with open(self.sys_msg_file_path, 'r') as f:
-            sys_msg = f.read()
-        with open(self.prompt_file_path, 'r') as f:
-            instruction = f.read()
-        with open(self.var_val_dict_path, 'r') as f:
-            var_val_list = f.read() # text structured, but not verified json
-        with open(self.json_output_template_path, 'r') as f:
-            json_template = f.read() # text structured, but not verified json
-            # json_template = json.load(f) # text has no structure, but verified json format
 
-        instruction = instruction.replace('{{<Variable-Value List>}}',var_val_list)   
-        instruction = instruction.replace('{{<json_output_template>}}',json_template)   
-
-        # Create LLM output path, if not exist.
-        os.makedirs(self.llm_output_path, exist_ok=True)
         
         # Save system_message and prompt to LLM output folder, being a part of provenance.
         with open(os.path.join(self.llm_output_path, 'system_message.txt'), 'w') as f:
-            f.write(sys_msg)
+            f.write(self.sys_msg)
         with open(os.path.join(self.llm_output_path, 'prompt.txt'), 'w') as f:
-            f.write(instruction)
+            f.write(self.prompt)
         # with open(os.path.join(self.llm_output_path, 'prompt.yaml'), 'w') as f:
-        #     yaml.dump([{"system_message": [sys_msg], "prompt": [instruction]}], f)
+        #     yaml.dump([{"system_message": [sys_msg], "prompt": [self.prompt]}], f)
             
         # Create cols to save the values to be generated by LLM in df
         for col in self.json_key_list:
@@ -117,8 +150,8 @@ class LLMApp:
         df = self.make_batch_call(
                 agent=agent, 
                 df=df,
-                system_message=sys_msg,
-                instruction=instruction, 
+                system_message=self.sys_msg,
+                instruction=self.prompt, 
                 prompt_id=self.prompt_id,
                 dataset_id=self.dataset_id,
                 key_list=self.json_key_list,
@@ -186,11 +219,7 @@ class LLMApp:
                 print(f"Case {case_id} text is empty!")
             else:
                 # custruct prompt
-                prompt = instruction + report
-                messages=[
-                    {"role": "system", "content": system_message},
-                    {"role": "user", "content": prompt},
-                ],
+                prompt = instruction.replace("{{<input_data>}}",report)
 
                 # Call the llm -----------------------------------------------------
                 response = agent.request(prompt, system_message, temperature=temperature)
@@ -258,6 +287,10 @@ class LLMApp:
                 json_file_path = os.path.join(output_path, f'{record}_{self.predictor}.json')
                 json_file_w_errs_path = os.path.join(json_with_errors_path, f'{record}_{self.predictor}.json')
                 shutil.copy(json_file_path, json_file_w_errs_path)
+
+        # save prompt for the last case
+        with open(os.path.join(output_path, f'prompt_{case_id}.txt'), 'w') as f:
+            f.write(prompt)
         
         # Save provenance to provenance.yaml
         provenance = [{
@@ -399,183 +432,6 @@ class LLMApp:
             print("Please provide a valid configuration yaml file path for parameter config_yaml_file_path.")
             return None
                   
-
-    def evaluate_with_cm(self,reference,prediction,title,predictor):
-    
-        df_metrics = pd.DataFrame()
-        
-        if len(reference) == len(prediction):   
-            # plot confusion matrix and calculate metrics of interest
-            df_metrics = self.plot_cm_with_metrics( 
-                reference=reference, 
-                prediction=prediction, 
-                title=title,
-                predictor=predictor
-                )
-        else:
-            print(f"Error: prediction length ({len(pred)}) is not equal to reference length ({len(ref)}.")
-            
-        return df_metrics 
-    
-    
-    
-    def plot_cm_with_metrics(self,
-                             reference, 
-                             prediction, 
-                             title, 
-                             predictor, 
-                             labels=None, 
-                             save_plots_to_path=None, 
-                             df_metrics=None,
-                            ):
-    
-        # plot confusion matrix
-        self.plot_cm(
-            reference = reference,
-            prediction = prediction,
-            title = title,
-            predictor = predictor,
-            labels = labels,
-            save_plots_to_path = save_plots_to_path,
-        )
-        
-        # calulate metrics
-        df_mtr = self.calculate_metrics(
-                     reference, 
-                     prediction, 
-                     predictor, 
-                     df_metrics,
-                     verbos=True
-                    )
-        return df_mtr
-    
-    
-    def calculate_metrics(self,
-                 reference, 
-                 prediction, 
-                 predictor, 
-                 df_metrics=None,
-                 verbos=False):    
-        
-        # calculate metrics 
-        accuracy = accuracy_score(reference, prediction)
-        f1 = f1_score(reference, prediction, average='weighted', zero_division=0)
-        kappa = cohen_kappa_score(reference, prediction)
-    
-        recall_w = recall_score(reference, prediction, average='weighted',zero_division=0) 
-        recall = recall_score(reference, prediction, average=None, zero_division=0)
-    
-        precision_w = precision_score(reference, prediction, average='weighted',zero_division=0)
-        precision = precision_score(reference, prediction, average=None, zero_division=0)
-    
-        num_cases = len(prediction)
-    
-    
-        if verbos:
-            d=3
-            print(f"Accuracy: {round(accuracy,d)}")
-            print(f"F1 (weighted): {round(f1,d)}")
-            print(f"Kappa: {round(kappa,d)}")
-            print(f"Recall (weighted): {round(recall_w,d)}")    
-            print(f"Precision (weighted ): {round(precision_w,d)}")
-            print(f"Number of Cases: {num_cases}")
-            
-        columns = ['Predictor','Accuracy', 'F1', 'Recall (weighted)', 'Precision (weighted)', 'Cases']
-        df_row = pd.DataFrame([[predictor, accuracy, f1, recall_w, precision_w, num_cases]], columns=columns)
-        
-        if df_metrics:
-            if df_metrics.columns == df_row.columns:
-                df_metrics = pd.concat([df_metrics, df_row], ignore_index=True)
-                return df_metrics
-            else:
-                print(f"Warning: df_metrics and calculated metrics have different columns.\n Retune the caculated metrics only.")
-                return df_row
-        else:
-            return df_row
-    
-    def plot_cm(self,
-                reference, 
-                prediction, 
-                title, 
-                predictor, 
-                labels = None, # Specify labels in an intended order; None: use default order 
-                save_plots_to_path = None, # specify folder to save plot; None: not save
-               ):
-    
-        if labels is None:
-            labels = list(set(reference.astype(str)) | set(prediction.astype(str)))
-            labels.sort()
-            labels = self.move_items_to_list_end(labels, ['Other', 'Not specified', 'Cannot be determined'])
-        else:
-            try:
-                if set(labels) != set(reference).uniion(set(prediction)):
-                    raise Error('Parameter labels do not match the reference and prediction!')
-            except Error as e:
-                print(f"Error: {e}")
-        # print(f" Number of labels: {len(labels)}")
-        
-        # Calculate the confusion matrix
-        cm = confusion_matrix(reference, prediction, labels = labels)
-    
-        # Visualize the confusion matrix using a heatmap
-        fig_size = (lambda x: 3 if x <=2 else (x if x > 2 and x <= 20 else 20))(len(labels))
-        plt.figure(figsize=(fig_size, fig_size))
-        sns.heatmap(cm, annot=True, cmap='Blues', fmt='d', cbar=True, xticklabels=labels, yticklabels=labels)
-        plt.title(title)
-        plt.xlabel(f"Prediction")
-        plt.ylabel("Reference")
-        fig = plt.gcf()
-        plt.show()
-        if save_plots_to_path:
-            filepath = os.path.join(
-                save_plots_to_path,
-                title+'.pdf')                   
-            fig.savefig(filepath, format='pdf')
-        plt.close()
-    
-    def move_items_to_list_end(self, list, end_item_list):
-        for item in end_item_list:
-            if item in list:
-                index = list.index(item)
-                list.pop(index)
-                list.append(item)
-        return list
-
-
-def aggregated_multilabel_cm(y_true, y_pred, title):
-    """Aggregate multilabel confusion matrixes and calculate metrics."""
-    
-    # create 
-    cm = multilabel_confusion_matrix(y_true, y_pred)
-    
-    micro_TN = sum(cm[:,0, 0])
-    micro_FN = sum(cm[:,1, 0])
-    micro_TP = sum(cm[:,1, 1])
-    micro_FP = sum(cm[:,0, 1])
-    
-    labels = ['N','P']
-    
-    cm_aggr = pd.DataFrame([[micro_TN,micro_FP],[micro_FN,micro_TP]], index=labels, columns=labels)
-    # print(cm_aggr)
-    # print("N", micro_TN,micro_FP)    
-    # print("P", micro_FN,micro_TP)  
-
-    # Visualize the confusion matrix using a heatmap
-    fig_size = (lambda x: 3 if x <=2 else (x if x > 2 and x <= 20 else 20))(len(labels))
-    plt.figure(figsize=(fig_size, fig_size))
-    sns.heatmap(cm_aggr, annot=True, cmap='Blues', fmt='d', cbar=True, xticklabels=labels, yticklabels=labels)
-    plt.title(title)
-    plt.xlabel("Prediction")
-    plt.ylabel("Reference")
-    fig = plt.gcf()
-    plt.show()
-    
-    micro_recall = micro_TP/(micro_TP + micro_FN)
-    micro_prec = micro_TP/(micro_TP + micro_FP)
-    micro_accuracy = (micro_TP + micro_TN)/(micro_TN + micro_FN + micro_TP + micro_FP)
-    print(f"Accuracy (micro-average): {round(micro_accuracy,3)}")
-    print(f"Recall (micro-average): {round(micro_recall, 3)}")
-    print(f"Precision (micro-average): {round(micro_prec,3)}")
     
 
 def run():
