@@ -14,29 +14,29 @@ https://ollama.com/
 
 ### Create a EnsemLLMs application project
 
-Create a project folder as "demo" shows.
+1. Create a project folder as "demo" shows.
 
-Create prompt template file for the problem of interest in the project home folder. Create a system message file (optional) if prefer. 
+2. Create prompt template file for the problem of interest in the project home folder. Create a system message file (optional) if prefer. 
 
-Create a variable-value dictionary in yaml, as demo show.
+&nbsp;  The variables of interest and their possible values, variable list, the expected JSON output template, can be embedded in a prompt template with the following place holders:
 
-Specify expected flattern JSON output template in yaml, as demo show.
+- `{{<Variable-Value Dictionary>}}` for variable-value table
 
-Specify configuration in "ensemble_config.yaml"
+- `{{<Variable List>}}` for variable list
 
-Modify setup.py for setting up the paths to local packages in EnsemLLMs.
+- `{{<json_output_template>}}` for expected JSON output template
 
-"./demo/demo.ipynb" provides an example to run EnsemLLMs for ECG report labeling.
+3. Create a variable-value dictionary in yaml, as demo show.
 
-### About data
+4. Specify expected flattern JSON output template in yaml, as demo show.
 
-In demo, ECG_Absert.csv contains two ECG reports, which were abserted from original MIMIC-IV ECG dataset and used to demo how to use EnsemLLMs.
+5. Specify configuration in "ensemble_config.yaml"
 
-The full MIMIC-IV ECG dataset can be found at:
+6. Modify setup.py for setting up the paths to local packages in EnsemLLMs.
+   
+### Examples
 
-https://physionet.org/content/mimic-iv-ecg/1.0/
-
-
-
-
+1. "./demo/demo.ipynb" provides an example to run EnsemLLMs for ECG report labeling, with a single case absert from MIMIC-IV ECG dataset.
+  
+2. "./example_project_small/demo_lung.ipynb" demos with a very small dataset about how to use EnsemLLMs to predict lung cancer TNM staging.
 
