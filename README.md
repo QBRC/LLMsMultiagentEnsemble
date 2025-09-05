@@ -40,3 +40,5 @@ https://ollama.com/
   
 2. "./example_project_small/demo_lung.ipynb" demos with a very small dataset about how to use EnsemLLMs to predict lung cancer TNM staging.
 
+### License
+Following UT Southwestern Office for Technology Development, the project is using the license from The University of Texas Southwestern Medical Center.
