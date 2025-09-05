@@ -1,4 +1,8 @@
+![QBRC logo](./assets/qbrc-logo.png)
+
 # LLMs Multiagent Ensemble (EnsemLLMs)
+
+Author: Jingwei Huang (Jingwei.Huang@utsouthwestern.edu)
 
 ## Quick Start
 
