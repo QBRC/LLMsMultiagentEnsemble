@@ -62,10 +62,10 @@ class EnsembleLLMsApp:
                     self.prompt_id = self.app_config['prompt_id']
                 except:
                     self.prompt_id = 'Prompt000'
-                # try:
-                #     self.sys_msg_file_path = os.path.relpath(self.app_config['system_message_file_path'],self.home_path)
-                # except:
-                #     self.sys_msg_file_path = None
+                try:
+                    self.sys_msg_file_path = os.path.relpath(self.app_config['system_message_file_path'],self.home_path)
+                except:
+                    self.sys_msg_file_path = None
                 
                 # Data
                 self.input_data_path = os.path.relpath(self.app_config['input_data_path'],self.home_path)
@@ -110,7 +110,7 @@ class EnsembleLLMsApp:
 
             # create a dictionary containing common key-value pairs to all llm_apps
             dic = {
-                'system_message_file_path': self.app_config['system_message_file_path'],
+                'system_message_file_path': self.sys_msg_file_path,
                 'prompt_file_path': self.app_config['prompt_file_path'],
                 'prompt_id': self.prompt_id,
                 'input_data_path': self.app_config['input_data_path'],
@@ -142,12 +142,13 @@ class EnsembleLLMsApp:
                 # # add app_path for the llm_app
                 app_home_path = os.path.join(self.home_path, f"{app['predictor']}")
                 app.update({'home_path': os.path.relpath(app_home_path)})
-                # create folder for each llm_app; if exists, remove first
-                if os.path.exists(app_home_path) and os.path.isdir(app_home_path):
-                    try:
-                        shutil.rmtree(app_home_path)
-                    except OSError as e:
-                        print(f"Error removing directory '{app_home_path}': {e}")
+                
+                # # create folder for each llm_app; if exists, remove first
+                # if os.path.exists(app_home_path) and os.path.isdir(app_home_path):
+                #     try:
+                #         shutil.rmtree(app_home_path)
+                #     except OSError as e:
+                #         print(f"Error removing directory '{app_home_path}': {e}")                
                 os.makedirs(app_home_path, exist_ok=True)
 
                 # add common key-value pairs to each llm_app
@@ -266,7 +267,7 @@ class EnsembleLLMsApp:
         
         # Vote for each variable
         for var in var_val_dict.keys():
-            vals = var_val_dict[f'{var}']
+            vals = list(var_val_dict[f'{var}'])
             if len(vals) <= 1:
                 print(f"Warning: Variable {var} does not have a list of categorical values; skipped!!\nCurrent value: {vals}.")
             else:
@@ -283,10 +284,10 @@ class EnsembleLLMsApp:
                     votes_cols += [f'votes_{var}_{val}']
                 # Handle non-standard values
                 df[f'votes_{var}_non-standard'] = 0 # initialize as 0
-                df[f"votes_{var}_non-standard"] = (~df[cols_to_check].isin(vals)).sum(axis=1)
+                df[f"votes_{var}_non-standard"] = ((~df[cols_to_check].isin(vals))&(~df[cols_to_check].isin(['',None])) ).sum(axis=1)
                 # Handle empty value (LLM failed to respond)
                 df[f'votes_{var}_no_response'] = 0 # initialize as 0
-                df[f"votes_{var}_no_response"] = (df[cols_to_check] == '').sum(axis=1)
+                df[f"votes_{var}_no_response"] = (df[cols_to_check].isin(['',None])).sum(axis=1)
 
                 # Infer var's value with max votes
                 df[f'{var}_voted'] = '' # initialize the col <var> for the voted value
@@ -322,7 +323,8 @@ class EnsembleLLMsApp:
                 return "Review"
             else: # greater than wining threshold and no tie, return the wining value.
                 return vals[votes.index(max_vote)]
-                
+
+    
     def apply_Postprocessing(self, function: Postprocessing) -> pd.DataFrame:
         """
         Interface: Apply any function that implements Postprocessing interface

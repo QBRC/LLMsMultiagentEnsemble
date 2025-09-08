@@ -97,10 +97,13 @@ class LLMAgent:
     
 
     # Function to a request to the language model and get a response
-    def request(self, prompt, system_message='', temperature=0.0, json_output=True):
+    def request(self, prompt, system_message='', temperature=0.001, json_output=True):
         """Make request to LLM."""
             
         response = None
+        
+        if temperature == 0:
+            temperature = 0.001 # avoid error for new models not allowing temperature=0
         
         # Request via transformers to a LLM in haggingface ----------------------------------
         # Change the follow block as needed for the specific LLM to call
