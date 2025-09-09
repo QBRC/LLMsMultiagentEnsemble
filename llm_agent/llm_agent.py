@@ -86,7 +86,7 @@ class LLMAgent:
         elif self.framework in ['AzureOpenAI', 'Azure OpenAI', 'Azure_OpenAI', 'Azure-OpenAI']:
             self.client = AzureOpenAI(
                 api_key = os.getenv("AZURE_OPENAI_KEY"),  
-                api_version="2024-10-01-preview",
+                api_version="2024-12-01-preview",
                 azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
             )
         elif self.framework in ['openAI', 'OpenAI']:
@@ -166,20 +166,46 @@ class LLMAgent:
               print('Error:', e)
         # Request to OpenAI or Azure OpenAI ------------------------------------------------------------------
         elif self.framework in ['AzureOpenAI', 'Azure OpenAI', 'Azure_OpenAI', 'Azure-OpenAI', 'OpenAI', 'openAI']:
-            try:
-                # call gpt model 
-                response = self.client.chat.completions.create(
-                    model=self.model,
-                    messages=[
-                        {"role": "system", "content": system_message},
-                        {"role": "user", "content": prompt},
-                    ],
-                    temperature=temperature,
-                    # comment this line, if no need to output as json data
-                    response_format={ "type": "json_object" }, 
-                )
-            except Exception as e:
-                print(f"Error: the request to GPT {self.model} is failed. \nAn exception of type {type(e).__name__} occurred: {e}")
+            if self.model in ['gpt-5', 'gpt-5-chat-latest', 'gpt-5-mini', 'gpt-5-nano']:
+                try:
+                    # call gpt-5 model
+                    response = self.client.responses.create(
+                        model=self.model,
+                        input=prompt,
+                        response_format={ "type": "json_object" },
+                    )
+                except Exception as e:
+                    print(f"Error: the request to GPT {self.model} is failed. \nAn exception of type {type(e).__name__} occurred: {e}")
+            elif self.model in ['o3', 'o1', 'o3-pro', 'o4-mini', 'o3-mini', 'o1-mini']:
+                try:
+                    # call gpt model 
+                    response = self.client.chat.completions.create(
+                        model=self.model,
+                        messages=[
+                            {"role": "system", "content": system_message},
+                            {"role": "user", "content": prompt},
+                        ],
+                        # temperature=temperature, # o family not allow temperature!!!
+                        # comment this line, if no need to output as json data
+                        response_format={ "type": "json_object" }, 
+                    )
+                except Exception as e:
+                    print(f"Error: the request to GPT {self.model} is failed. \nAn exception of type {type(e).__name__} occurred: {e}")
+            else:
+                try:
+                    # call gpt model 
+                    response = self.client.chat.completions.create(
+                        model=self.model,
+                        messages=[
+                            {"role": "system", "content": system_message},
+                            {"role": "user", "content": prompt},
+                        ],
+                        temperature=temperature,
+                        # comment this line, if no need to output as json data
+                        response_format={ "type": "json_object" }, 
+                    )
+                except Exception as e:
+                    print(f"Error: the request to GPT {self.model} is failed. \nAn exception of type {type(e).__name__} occurred: {e}")
             
         # Return the content of the response
         return response
