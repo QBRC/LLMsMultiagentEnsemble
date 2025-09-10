@@ -72,6 +72,10 @@ class EnsembleLLMsApp:
                 self.dataset_id = self.app_config['dataset_id']
                 self.input_text_col = self.app_config['input_text_column_name']
                 self.input_data_id_col = self.app_config['input_data_id_column_name']
+                try:
+                    self.kp_path = os.path.relpath(self.app_config['knowledge_package_path'],self.home_path)
+                except:
+                    self.kp_path = None
 
                 try:
                     var_val_dict_path = os.path.relpath(self.app_config['var_val_dict_path'],self.home_path)
@@ -117,6 +121,7 @@ class EnsembleLLMsApp:
                 'dataset_id': self.dataset_id,
                 'input_data_id_column_name': self.input_data_id_col,
                 'input_text_column_name': self.input_text_col,
+                'kp_path': self.kp_path,
                 'var_val_dict_path': self.app_config['var_val_dict_path'],
                 'json_output_template_path':self.app_config['json_output_template_path'],
                 'json_key_list': self.json_key_list

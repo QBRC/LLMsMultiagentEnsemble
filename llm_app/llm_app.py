@@ -60,6 +60,12 @@ class LLMApp:
                 # Create LLM output path, if not exist.
                 os.makedirs(self.llm_output_path, exist_ok=True)
 
+                # read in knowledge package 
+                try:
+                    with open(self.app_config['kp_path'], 'r') as f:
+                        kp_text = f.read()
+                except Exception as e:
+                        kp_text = ''
 
                 # prompt ------
                 with open(self.app_config['prompt_file_path'], 'r') as f:
@@ -104,7 +110,8 @@ class LLMApp:
                 #         print(f"Warning: Variable {v} is not specified in the JSON output template.")
                 #         sys.exit()
                 
-                # embed var_list, var_val_dict, and json_output_template into prompt self.prompt, if prompt template contains.
+                # embed kp, var_list, var_val_dict, and json_output_template into prompt self.prompt, if prompt template contains.
+                self.prompt = self.prompt.replace('{{<Knowledge_Package>}}',json.dumps(kp_text))   
                 self.prompt = self.prompt.replace('{{<Variable List>}}',json.dumps(self.var_list))   
                 self.prompt = self.prompt.replace('{{<Variable-Value Dictionary>}}',self.var_val_dict_str)
                 self.prompt = self.prompt.replace('{{<json_output_template>}}',self.json_output_template_str)   
@@ -217,6 +224,8 @@ class LLMApp:
                     
             if report == '':
                 print(f"Case {case_id} text is empty!")
+            # elif index <= 520: # skip 510 and before
+            #     pass
             else:
                 # custruct prompt
                 prompt = instruction.replace("{{<input_data>}}",report)
@@ -353,16 +362,22 @@ class LLMApp:
     def estimate_cost(self, model, input_tokens, output_tokens):
         if model in ['GPT-4-Turbo', 'gpt-4-0125-preview', 'gpt-4-1106-preview', 'gpt4t1106', 'GPT-4-Turbo-Vision']:
             cost = input_tokens * 0.001 * 0.01 + output_tokens * 0.001 * 0.03
-        elif model in ['GPT-4o', 'gpt-4o']: #2024-05-23 openAI pricing
-            cost = input_tokens * 0.000001 * 5 + output_tokens * 0.000001 * 15
-        elif model in ['GPT-4o-mini', 'gpt-4o-mini']: #2024-07-26 openAI pricing
-            cost = input_tokens * 0.000001 * 0.15 + output_tokens * 0.000001 * 0.06
+        elif model in ['GPT-5', 'gpt-5']: # 2025-09-09 openAI pricing
+            cost = input_tokens * 0.000001 * 1.25 + output_tokens * 0.000001 * 10
+        elif model in ['o3', 'O3']: # 2025-09-09 openAI pricing
+            cost = input_tokens * 0.000001 * 2 + output_tokens * 0.000001 * 8
+        elif model in ['o4-mini', 'O4-mini']: # 2025-09-09 openAI pricing
+            cost = input_tokens * 0.000001 * 1.1 + output_tokens * 0.000001 * 4.4
+        elif model in ['o4-mini-deep-research', 'O4-mini-deep-research']: # 2025-09-09 openAI pricing
+            cost = input_tokens * 0.000001 * 2 + output_tokens * 0.000001 * 8
+        elif model in ['GPT-4.1', 'gpt-4.1']: # 2025-09-09 openAI pricing
+            cost = input_tokens * 0.000001 * 2 + output_tokens * 0.000001 * 8
+        elif model in ['GPT-4o', 'gpt-4o']: # 2025-09-09 openAI pricing
+            cost = input_tokens * 0.000001 * 2.5 + output_tokens * 0.000001 * 10
         elif model in ['GPT-4.1-mini', 'gpt-4.1-mini']: #2025-08-21 openAI pricing
             cost = input_tokens * 0.000001 * 0.4 + output_tokens * 0.000001 * 1.60
-        elif model in ['GPT-4-32']:
-            cost = input_tokens * 0.001 * 0.06 + output_tokens * 0.001 * 0.12
-        elif model in ['gpt-4-0613']: #8k
-            cost = input_tokens * 0.001 * 0.03 + output_tokens * 0.001 * 0.06
+        elif model in ['GPT-4o-mini', 'gpt-4o-mini']: #2025-08-21 openAI pricing
+            cost = input_tokens * 0.000001 * 0.15 + output_tokens * 0.000001 * 0.6
         elif model in ['GPT-3.5-Turbo-0125', 'gpt-35-turbo-0125']: #16k
             cost = input_tokens * 0.001 * 0.0005 + output_tokens * 0.001 * 0.0015
         elif model in ['gpt-3.5-turbo-1106','gpt35t16k1106', 'gpt35t1106']: #16k
