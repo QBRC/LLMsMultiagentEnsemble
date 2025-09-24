@@ -18,7 +18,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 """ define function to construct and plot Confusion Matrix, and calculate metrics """
 
-def evaluate_attribute(df,col_ref,col_pred,plot_title,predictor,metrics_for_vals=[],exclude_uncern_ref=False):
+def evaluate_attribute(df,col_ref,col_pred,plot_title,predictor,metrics_for_vals=[],exclude_uncertain_ref=False):
     """Evaluate classification by creating confusion matrix and calculating metrics.
 
     Keyword arguments:
@@ -28,7 +28,7 @@ def evaluate_attribute(df,col_ref,col_pred,plot_title,predictor,metrics_for_vals
     plot_title -- the title of confusion matrix
     predictor -- the predictor that made the prediction
     metrics_for_vals -- a list of values, which the value-centered metrics will be calculated, such as Recall of <value>. (default [])
-    exclude_uncern_ref -- Boolean variable, True: evaluation excludes rows, where the reference has any uncertain values
+    exclude_uncertain_ref -- Boolean variable, True: evaluation excludes rows, where the reference has any uncertain values
     """
     # Use category variable
     ref = df[col_ref].astype(str)
@@ -38,18 +38,12 @@ def evaluate_attribute(df,col_ref,col_pred,plot_title,predictor,metrics_for_vals
     # ref = df[col_ref].map({'Yes': True, 'No': False})
     # pred = df[col_pred].map({'Yes': True, 'No': False})
 
-    df_metrics = plot_cm_plus_metrics( 
-                        reference=ref, 
-                        prediction=pred, 
-                        plot_title=plot_title,
-                        predictor=predictor, 
-                        metrics_for_vals=metrics_for_vals,
-                        # df_metrics=df_metrics
-                    )
-    if exclude_uncern_ref:   
+    if exclude_uncertain_ref:   
         # Evaluate without uncertain values in reference
-        df1 = df[~df[col_ref].astype(str).isin(["", 'nan', 'NA', 'Not available', 'Not applicable', 'Cannot be determined', 'Unknown',
-                                                  'Absent', 'Information Absent', 'No input data', 'No Input Data', 'No input', 'No Input'])]
+        df1 = df[~df[col_ref].astype(str).isin(["", 'nan', 'NA', 'Not available', 'Not applicable', 'Not specified',
+                                                'Cannot be determined', 'Unknown',
+                                                'Absent', 'Information Absent', 
+                                                'No input data', 'No Input Data', 'No input', 'No Input'])]
     
         ref = df1[col_ref].astype(str)
         pred = df1[col_pred].astype(str)
@@ -63,6 +57,16 @@ def evaluate_attribute(df,col_ref,col_pred,plot_title,predictor,metrics_for_vals
                             metrics_for_vals=metrics_for_vals,
                             # df_metrics=df_metrics
                         )
+    else:
+        df_metrics = plot_cm_plus_metrics( 
+                            reference=ref, 
+                            prediction=pred, 
+                            plot_title=plot_title,
+                            predictor=predictor, 
+                            metrics_for_vals=metrics_for_vals,
+                            # df_metrics=df_metrics
+                        )
+        
     return df_metrics 
 
 
@@ -106,9 +110,9 @@ def plot_cm_plus_metrics(
     jaccard_w = jaccard_score(reference, prediction, average='weighted')
     jaccard = jaccard_score(reference, prediction, average=None)
     
-    recall_m = round(recall_score(y_true=reference, y_pred=prediction, average='micro'),ndigits) 
-    recall_w = round(recall_score(y_true=reference, y_pred=prediction, average='weighted'),ndigits) 
-    recall = recall_score(y_true=reference, y_pred=prediction, average=None) 
+    recall_m = round(recall_score(y_true=reference, y_pred=prediction, average='micro', zero_division=0),ndigits) 
+    recall_w = round(recall_score(y_true=reference, y_pred=prediction, average='weighted', zero_division=0),ndigits) 
+    recall = recall_score(y_true=reference, y_pred=prediction, average=None, zero_division=0) 
 
     # specificity = specificity_score(y_true=reference, y_pred=prediction)
     # print(f"Specificity: {specificity}")
